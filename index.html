@@ -24,6 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@200;300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link rel="icon" type="image/png" href="./images/myimage.webp">
     <style>
         :root {
@@ -220,27 +221,26 @@
             line-height: 1.25rem;
         }
 
-        .typed-out {
+        /* .typed-out {
             width: 0;
             animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
             ;
             animation-delay: 1s;
-            /* animation: typing 3s steps(30, end) 1s forwards,*/
         }
 
         .typed-2 {
             width: 0;
             animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
-            /* animation: typing 3s steps(30, end) 1s forwards, blinking .8s infinite; */
             animation-delay: 2s;
         }
 
         .typed-3 {
             width: 0;
             animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
-            /* animation: typing 3s steps(30, end) 1s forwards, blinking .8s infinite; */
+            animation: typing 3s steps(30, end) 1s forwards, blinking .8s infinite; 
             animation-delay: 3s;
-        }
+            transition-delay: 3s;
+        } */
 
 
         .user-input input:focus~.flabel,
@@ -376,21 +376,29 @@
         style="background-image: url('images/workspace.jfif');">
         <div class="flex justify-between items-center h-full px-6 md:px-16 lg:px-24 xl:px-32">
             <div class="w-full md:w-1/2 text-white">
-                <div class="text-5xl md:text-6xl lg:text-7xl">
+                <div class="text-5xl md:text-6xl lg:text-7xl animate__animated animate__fadeIn animate__slower animate__delay-2s">
                     <span
-                        class="inline-block mb-0 leading-none font-light text-3xl md:text-4xl lg:text-5xl typed-out whitespace-nowrap overflow-hidden">Hey,
+                        class="inline-block mb-0 leading-none font-light text-3xl md:text-4xl lg:text-5xl">Hey,
                         I'm </span> <br>
-                    <h1 class="inline-block leading-none font-black typed-2 whitespace-nowrap overflow-hidden" style="font-family: 'Montserrat', sans-serif;
+                    <h1 class="inline-block leading-none font-black" style="font-family: 'Montserrat', sans-serif;
                     font-weight: 900;">DRISADEN
                     </h1>
                 </div>
-                <br>
-                <p class="inline-block typed-3 sm:text-base md:text-xl lg:text-2xl leading-none mb-8 tracking-wide whitespace-nowrap overflow-hidden"
+                <!-- <br> -->
+                <div id="typed-strings">
+                    <p>I'm a Web Designer</p>
+                    <p>I'm a Digital Coach</p>
+                    <p>I'm a Funnel Optimizer</p>
+                </div>
+                <span class="sm:text-base md:text-xl lg:text-2xl mb-10 tracking-wide" id="typed" style="font-family: 'Montserrat', sans-serif; font-weight: 300;"></span>
+
+                <!-- <p class="inline-block typed-3 sm:text-base md:text-xl lg:text-2xl leading-none mb-8 tracking-wide whitespace-nowrap overflow-hidden"
                     style="font-family: 'Montserrat', sans-serif;
                     font-weight: 300;">
-                    I'm a Web Designer and Digital Coach </p>
+                    I'm a Web Designer and Digital Coach </p> -->
+
                 <!-- <div class="flex flex-wrap mb-10 animate__animated animate__fadeIn animate__delay-4s"> -->
-                <div class="flex flex-wrap mb-10 animate__animated animate__fadeIn animate__slower animate__delay-4s">
+                <div class="mt-10 flex flex-wrap mb-10 animate__animated animate__fadeIn animate__slower animate__delay-4s">
                     <a href="01AdenaikeIdrisResume.pdf"
                         class="transition duration-300 inline-block text-white bg-blue-500 py-3 px-6 rounded-md font-semibold text-lg mr-4 mb-4"
                         download>Download Résumé</a>
@@ -1339,8 +1347,7 @@
                                         class="font-bold py-2 px-4 rounded-md transition duration-300 border border-blue-500 tx-diamond-2 btn-hover focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-lg">Send
                                         Message</button>
                                 </form>
-                                <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden"
-                                    id="modal">
+                                <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden" id="modal">
                                     <div class="bg-white p-8 rounded-md shadow-md mx-10">
                                         <h2 class="text-2xl font-bold mb-4 ">Your message has sent successfully!</h2>
                                         <p class="mb-4 text-base">Kindly check your mailbox for my response. You can click
@@ -1573,6 +1580,16 @@
                 menu.classList.add("hidden");
             }
         }
+
+        var typed = new Typed('#typed', {
+          stringsElement: '#typed-strings',
+          loop: true,
+          backDelay: 900,
+          backSpeed: 30,
+          smartBackspace: true,
+          typeSpeed: 40,
+          startDelay: 3000,
+        });
 
         function countUp(element) {
             let target = parseInt(element.getAttribute('data-target'));
