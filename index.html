@@ -30,9 +30,24 @@
             color: var(--h-color);
             font-family: 'Montserrat', sans-serif;
         } */
-        .gallery-item:hover .gallery-overlay {
+        /* .gallery-item:hover .gallery-overlay {
             opacity: 1;
-        }
+            color: white;
+            display: block;
+        } */
+        /* Styles for the gallery section */
+        .demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+  .mySlides{
+    display: none;
+  }
+
     </style>
 </head>
 
@@ -571,64 +586,88 @@
             </section>
 
             <!-- 4th section -->
-            <section class="bg-gray-100 py-16">
+            <!-- <section class="bg-gray-100 py-16">
                 <div class="container mx-auto px-4">
                     <div class="text-center">
                         <h2 class="text-4xl font-bold mb-2">Gallery</h2>
                         <p class="text-lg font-semibold mb-8">Some of our amazing photos</p>
                     </div>
-                    <!-- <div class="flex flex-wrap justify-center">
-                        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 gallery-item  animate animate__animated animate__fadeInUp animate__delay-300ms">
-                            <div class="relative overflow-hidden">
-                                <img src="./images/myimage.jfif" alt="Gallery Item" class="w-full">
-                                <div
-                                    class="absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 transition duration-300 ease-in-out gallery-overlay">
-                                    <div class="text-center">
-                                        <h3 class="text-xl font-semibold mb-2">Caption Here</h3>
-                                        <p class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur
-                                            adipiscing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     <div class="flex flex-wrap justify-center items-center">
                         <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 gallery-item">
-                            <!-- <div class="relative overflow-hidden animate animate__animated animate__fadeIn animate__delay-150ms">
-                                 <img src="./images/myimage.jfif" alt="Gallery Item" class="w-full">
-                                <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 transition duration-300 ease-in-out gallery-overlay">
-                                    <div class="text-center">
+                            <div class="relative overflow-hidden animate animate__animated animate__fadeIn animate__delay-150ms">
+                                <img src="./images/myimage.jfif" alt="Gallery Item" class="w-full">
+                                <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-75 hover:bg-black hover:text-white transition duration-300 ease-in-out">
+                                    <div class="text-center hidden gallery-overlay">
                                         <h3 class="text-xl font-semibold mb-2">Caption Here</h3>
                                         <p class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur
                                             adipiscing elit.</p>
                                     </div>
-                                </div> -->
-                            <div
-                                class="w-full h-full object-cover rounded-lg relative overflow-hidden animate animate__animated animate__fadeIn animate__delay-150ms">
-                                <img src="./images/myimage.jfif" alt="Gallery Item" class="w-full">
-                                <div
-                                    class="absolute inset-0 opacity-0 hover:opacity-75 transition duration-500 ease-in-out gallery-overlay">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-
-                                        <div class="text-center">
-                                            <h3 class="text-xl font-semibold mb-2">Caption Here</h3>
-                                            <p class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit.</p>
-                                        </div>
-                                    </div>
                                 </div>
-                                <!--   <img src="" alt="Photo 1" class="w-full h-full object-cover rounded-lg">
-          <div class="absolute inset-0 bg-black opacity-0 hover:opacity-75 transition duration-500"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-white text-center p-4 animate__animated animate__fadeIn">
-              <h3 class="font-bold mb-2">Photo 1</h3>
-              <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div> -->
                             </div>
                         </div>
-                        <!-- repeat this for each gallery item -->
-
                     </div>
+                    repeat this for each gallery item
+
+                </div>
+            </section> -->
+            <section id="gallery" class="py-16 animated">
+                <div class="container mx-auto px-4 relative">
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">1 / 6</div>
+                            <img src="./images/myimage.jfif" class="w-full">
+                        </div>
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">2 / 6</div>
+                            <img src="./images/workspace.jfif" class="w-full">
+                        </div>
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">3 / 6</div>
+                            <img src="./images/myimage.jfif" class="w-full">
+                        </div>
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">4 / 6</div>
+                            <img src="./images/workspace.jfif" class="w-full">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">5 / 6</div>
+                            <img src="./images/myimage.jfif" class="w-full">
+                        </div>
+                      
+                        <div class="mySlides">
+                          <div class="text-sm text-gray-500 absolute top-0 py-2 px-3">6 / 6</div>
+                            <img src="./images/workspace.jfif" class="w-full">
+                        </div>
+                      
+                        <!-- <a class="prev hover:text-gray-200 absolute top-1/2 left-0 transform -translate-y-1/2 rounded-full bg-gray-700 px-3 py-2 text-white hover:bg-gray-800" onclick="plusSlides(-1)">&#10094;</a> -->
+                        <a class="cursor-pointer absolute top-1/2 left-0 w-auto px-16 -mt-50 text-white font-bold text-20 rounded-r-lg select-none" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="cursor-pointer absolute top-1/2 w-auto px-16 -mt-50 text-white font-bold text-20 rounded-r-lg select-none right-0 rounded-r-3px" onclick="plusSlides(1)">&#10095;</a>
+                      
+                        <div class="text-center bg-gray-900 py-2 px-4 text-white">
+                          <p id="caption"></p>
+                        </div>
+                      
+                        <div class="flex row">
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/myimage.jfif" onclick="currentSlide(1)" alt="The Woods">
+                          </div>
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/workspace.jfif" onclick="currentSlide(2)" alt="Cinque Terre">
+                          </div>
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/myimage.jfif" onclick="currentSlide(3)" alt="Mountains and fjords">
+                          </div>
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/workspace.jfif" onclick="currentSlide(4)" alt="Northern Lights">
+                          </div>
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/myimage.jfif" onclick="currentSlide(5)" alt="Nature and sunrise">
+                          </div>
+                          <div class="m-1 w-1/6">
+                            <img class="w-full h-auto demo cursor-pointer" src="./images/workspace.jfif" onclick="currentSlide(6)" alt="Snowy Mountains">
+                          </div>
+                        </div>
+                </div>
             </section>
 
 
@@ -776,6 +815,15 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobile-menu");
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+            } else {
+                menu.classList.add("hidden");
+            }
+        }
+
         function countUp(element) {
             let target = parseInt(element.getAttribute('data-target'));
             let count = parseInt(element.innerText);
@@ -804,52 +852,56 @@
             startCounters();
         });
 
-        function animateGallery() {
-            let galleryItems = document.querySelectorAll('.gallery-item');
 
-            galleryItems.forEach(function (item) {
-                let scrollTop = window.pageYOffset + window.innerHeight;
-                let itemTop = item.offsetTop;
 
-                if (scrollTop > itemTop && !item.classList.contains('animate')) {
-                    item.classList.add('animate', 'animate__animated', 'animate__fadeIn', 'animate__delay-150ms');
-                }
-            });
-        }
+        /* // function animateGallery() {
+        //     let galleryItems = document.querySelectorAll('.gallery-item');
 
-        window.addEventListener('scroll', function () {
-            animateGallery();
-        });
+        //     galleryItems.forEach(function (item) {
+        //         let scrollTop = window.pageYOffset + window.innerHeight;
+        //         let itemTop = item.offsetTop;
 
-        // const counters = document.querySelectorAll('.counter');
-        // const speed = 200;
-
-        // counters.forEach(counter => {
-        //     const updateCount = () => {
-        //         const target = +counter.getAttribute('data-target');
-        //         const count = +counter.innerText;
-
-        //         const inc = target / speed;
-
-        //         if (count < target) {
-        //             counter.innerText = Math.ceil(count + inc);
-        //             setTimeout(updateCount, 1);
-        //         } else {
-        //             counter.innerText = target;
+        //         if (scrollTop > itemTop && !item.classList.contains('animate')) {
+        //             item.classList.add('animate', 'animate__animated', 'animate__fadeIn', 'animate__delay-150ms');
         //         }
-        //     }
+        //     });
+        // }
+        // window.addEventListener('scroll', function () {
+        //     animateGallery();
+        // }); */
 
-        //     updateCount();
-        // });
+        let slideIndex = 1;
+showSlides(slideIndex);
 
-        function toggleMenu() {
-            var menu = document.getElementById("mobile-menu");
-            if (menu.classList.contains("hidden")) {
-                menu.classList.remove("hidden");
-            } else {
-                menu.classList.add("hidden");
-            }
-        }
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
     </script>
 </body>
 
