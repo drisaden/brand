@@ -36,10 +36,33 @@
             display: block;
         } */
         /* Styles for the gallery section */
+        
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        /* Fade out the second bar */
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        /* Rotate last bar */
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
         .demo {
             opacity: 0.6;
         }
-
         .active,
         .demo:hover {
             opacity: 1;
@@ -66,13 +89,22 @@
                     <a href="#portfolio" class="py-4 px-2 text-white font-semibold hover:text-gray-300">Portfolio</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button type="button" class="text-gray-500 hover:text-white focus:outline-none focus:text-white"
+                    <!-- <button type="button" class="text-gray-500 hover:text-white focus:outline-none focus:text-white"
                         aria-label="toggle menu" onclick="toggleMenu()">
                         <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" />
                         </svg>
-                    </button>
+                    </button> -->
+                    <button type="button"
+                    class="cursor-pointer text-gray-500 hover:text-white focus:outline-none focus:text-white"
+                    aria-label="toggle menu" onclick="toggleMenu()">
+                    <div class="container" onclick="myFunction(this)"> 
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    </div>
+                </button>
                 </div>
             </div>
         </div>
@@ -987,6 +1019,9 @@
     </footer>
 
     <script>
+        function myFunction(x) {
+        x.classList.toggle("change");
+    }
         function toggleMenu() {
             var menu = document.getElementById("mobile-menu");
             if (menu.classList.contains("hidden")) {
