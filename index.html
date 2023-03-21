@@ -67,6 +67,47 @@
         .demo:hover {
             opacity: 1;
         }
+        .typed-out {
+            width: 0;
+            animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+            ;
+            animation-delay: 2s;
+            /* animation: typing 3s steps(30, end) 1s forwards,*/
+        }
+
+        .typed-2 {
+            width: 0;
+            animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+            /* animation: typing 3s steps(30, end) 1s forwards, blinking .8s infinite; */
+            animation-delay: 3s;
+        }
+
+        .typed-3 {
+            width: 0;
+            animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+            /* animation: typing 3s steps(30, end) 1s forwards, blinking .8s infinite; */
+            animation-delay: 4s;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blinking {
+            from {
+                border-color: transparent
+            }
+
+            to {
+                border-color: rgb(47, 139, 143);
+            }
+        }
     </style>
 </head>
 
@@ -124,10 +165,17 @@
     <header class="bg-gray-700 bg-cover bg-center h-screen" style="background-image: url('images/workspace.jfif');">
         <div class="flex justify-between items-center h-full px-6 md:px-16 lg:px-24 xl:px-32">
             <div class="w-full md:w-1/2 text-white">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl mb-3"><span
-                        class="mb-0 leading-none font-light text-3xl md:text-4xl lg:text-5xl">Hey, I'm </span> <br><span
-                        class="leading-none font-black">DRISADEN</span></h1>
-                <p class="text-base md:text-xl lg:text-2xl leading-none mb-8 tracking-widest">Web Designer || Funnel
+                <div class="text-5xl md:text-6xl lg:text-7xl">
+                    <span
+                        class="inline-block mb-0 leading-none font-light text-3xl md:text-4xl lg:text-5xl typed-out whitespace-nowrap overflow-hidden">Hey,
+                        I'm </span> <br>
+                    <h1 class="inline-block leading-none font-black typed-2 whitespace-nowrap overflow-hidden">DRISADEN
+                    </h1>
+                </div>
+                <br>
+                <p
+                    class="inline-block typed-3 text-base md:text-xl lg:text-2xl leading-none mb-8 tracking-widest whitespace-nowrap overflow-hidden">
+                    Web Designer || Funnel
                     Hacker</p>
                 <div class="flex flex-wrap mb-10">
                     <a href="01AdenaikeIdrisResume.pdf"
