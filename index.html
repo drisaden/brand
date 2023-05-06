@@ -18,8 +18,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
         integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" type="image/png" href="./images/myimage.webp">
     <style>
@@ -103,10 +104,33 @@
             animation-delay: 3s;
         }
 
-        textarea[placeholder] {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        textarea[placeholder], img[alt] {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            padding: 3px;
+        }
+
+        a{
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+
+        .text-base{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            padding: 3px 0px;
+        }
+
+        .text-2xl{
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 0.8rem;
+        }
+
+        .text-lg{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
         }
 
         .user-input input:focus~.flabel,
@@ -231,10 +255,10 @@
                         <div class="md:flex">
                             <div class="md:w-1/2 px-4 py-6 md:py-8">
                                 <h2 class="text-2xl font-bold mb-4">About Me</h2>
-                                <p class="text-gray-700 mb-4">My name is Adenaike Idris, a professional website designer
+                                <p class="text-gray-700 mb-4 text-base">My name is Adenaike Idris, a professional website designer
                                     and a digital expert. I help youths and young entrepreneurs leverage on the
                                     internet's oil money using their acquired skills and available resources</p>
-                                <p class="text-gray-700 mb-4">One of my aims is to become world-class software developer
+                                <p class="text-gray-700 mb-4 text-base">One of my aims is to become world-class software developer
                                     and seasoned digital marketer. As there are so many problems calling for solutions
                                     in this world, therefore I wish to join the band wagon that specialises at providing
                                     solution to the world's problems using technical approach and strategic marketing.
@@ -252,15 +276,15 @@
                         <div class="md:flex">
                             <div class="px-4 py-6 md:py-8">
                                 <h2 class="text-2xl font-bold mb-4">My Story</h2>
-                                <p class="text-gray-700 mb-4">Do you ever feel like life is going nowhere, and you're
+                                <p class="text-gray-700 mb-4 text-base">Do you ever feel like life is going nowhere, and you're
                                     stuck in a hopeless cycle of frustration and despair? That was me in 2020, a young
                                     man with big dreams but no direction.
                                 </p>
-                                <p class="text-gray-700 mb-10">I was broke, depressed, and searching for a way out. I
+                                <p class="text-gray-700 mb-10 text-base">I was broke, depressed, and searching for a way out. I
                                     spent my hard-earned salary on make-money-online programs that promised the world
                                     but delivered nothing. I was like a ship lost at sea, with no anchor to hold onto.
                                 </p>
-                                <p class="text-gray-700 mb-10">But then something changed. I discovered the world of web
+                                <p class="text-gray-700 mb-10 text-base">But then something changed. I discovered the world of web
                                     development, and it changed my life forever. I started learning from the best in the
                                     business, people like Fawaz (CEO, <a href="https://rayyantech.sgm.ng"
                                         target="_blank" rel="noopener noreferrer" class="text-blue-600">Rayyan
@@ -268,21 +292,21 @@
                                         rel="noopener noreferrer" class="text-blue-600">Expertnaire</a> top affiliate),
                                     who showed me the ropes and helped me hone my skills.
                                 </p>
-                                <p class="text-gray-700 mb-10">I remember the day I first started coding. It was like a
+                                <p class="text-gray-700 mb-10 text-base">I remember the day I first started coding. It was like a
                                     whole new world opened up to me, full of endless possibilities and untold riches. I
                                     felt like I was finally on the path to success, like I had found my calling in life.
                                 </p>
-                                <p class="text-gray-700 mb-10">And the best part? It wasn't just about the money. Sure,
+                                <p class="text-gray-700 mb-10 text-base">And the best part? It wasn't just about the money. Sure,
                                     web development has been a steady source of income for me, but it's also been a
                                     source of pride and accomplishment. Every line of code I write feels like a victory,
                                     like I'm building something that will change the world.
                                 </p>
-                                <p class="text-gray-700 mb-10">Looking back on my journey, I can't help but feel
+                                <p class="text-gray-700 mb-10 text-base">Looking back on my journey, I can't help but feel
                                     grateful for the people who helped me along the way. Master Fawaz and others like
                                     him have been instrumental in my success, guiding me through the tough times and
                                     celebrating with me in the good times.
                                 </p>
-                                <p class="text-gray-700 mb-10">If you're like I was, lost and searching for a way out, I
+                                <p class="text-gray-700 mb-10 text-base">If you're like I was, lost and searching for a way out, I
                                     urge you to give web development a try. It may just be the lifeline you've been
                                     looking for, the thing that will change your life forever.
                                 </p>
@@ -555,8 +579,8 @@
                     <div class="flex flex-wrap mb-20">
                         <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                             <div class="rounded shadow-lg p-2 pb-5 bg-white">
-                                <h3 class="text-2xl mb-3">Web Design</h3>
-                                <p class="text-gray-600 mb-8">I create stunning, high-performing websites that capture
+                                <h3 class="text-lg mb-3">Web Design</h3>
+                                <p class="text-gray-600 mb-8 text-base">I create stunning, high-performing websites that capture
                                     the user's attention and drive conversions.
 
                                 </p>
@@ -567,8 +591,8 @@
                         </div>
                         <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                             <div class="rounded shadow-lg p-2 pb-5 bg-white">
-                                <h3 class="text-2xl mb-3">Online Coaching</h3>
-                                <p class="text-gray-600 mb-8">I help clients reach their goals through personalized
+                                <h3 class="text-lg mb-3">Online Coaching</h3>
+                                <p class="text-gray-600 mb-8 text-base">I help clients reach their goals through personalized
                                     coaching that focuses on individual abilities.
                                 </p>
                                 <a href="#"
@@ -578,8 +602,8 @@
                         </div>
                         <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                             <div class="rounded shadow-lg p-2 pb-5 bg-white">
-                                <h3 class="text-2xl mb-3">Graphic Design</h3>
-                                <p class="text-gray-600 mb-8">I create visually appealing graphics that communicate
+                                <h3 class="text-lg mb-3">Graphic Design</h3>
+                                <p class="text-gray-600 mb-8 text-base">I create visually appealing graphics that communicate
                                     ideas quickly and effectively.
                                 </p>
                                 <a href="#"
@@ -589,8 +613,8 @@
                         </div>
                         <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                             <div class="rounded shadow-lg p-2 pb-5 bg-white">
-                                <h3 class="text-2xl mb-3">Content Creation</h3>
-                                <p class="text-gray-600 mb-8">I create engaging content that captivates an audience,
+                                <h3 class="text-lg mb-3">Content Creation</h3>
+                                <p class="text-gray-600 mb-8 text-base">I create engaging content that captivates an audience,
                                     drives action and build authority.</p>
                                 <a href="#"
                                     class="uppercase bg-blue-500 text-gray-100 border-2 border-blue-500 py-2 px-4 rounded-lg hover:bg-transparent hover:text-blue-500 transition duration-300">BOOK
@@ -623,7 +647,7 @@
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
                                     <h3 class="text-lg font-bold mb-2">Portfolio Design</h3>
-                                    <p class="text-sm mb-4">Just started building this portfolio for a graphic designer
+                                    <p class="text-base mb-4">Just started building this portfolio for a graphic designer
                                     </p>
                                     <a href="https://themarketingjewel.com.ng/SantosPortfolio" target="_blank"
                                         class="bg-white text-gray-800 py-2 px-4 rounded-lg inline-block">View</a>
@@ -637,7 +661,7 @@
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
                                     <h3 class="text-lg font-bold mb-2">Landing Page</h3>
-                                    <p class="text-sm mb-4">Just built this landing page for a client to promote her
+                                    <p class="text-base mb-4">Just built this landing page for a client to promote her
                                         Internet Marketing business.</p>
                                     <a href="https://amaraelufowoju.com/training" target="_blank"
                                         class="bg-white text-gray-800 py-2 px-4 rounded-lg inline-block">View</a>
@@ -651,7 +675,7 @@
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
                                     <h3 class="text-lg font-bold mb-2">Countdown</h3>
-                                    <p class="text-sm mb-4">Created this countdown page for Ramadan Fasting Period for
+                                    <p class="text-base mb-4">Created this countdown page for Ramadan Fasting Period for
                                         Muslims</p>
                                     <a href="https://themarketingjewel.com.ng/1444-ramadan-countdown" target="_blank"
                                         class="bg-white text-gray-800 py-2 px-4 rounded-lg inline-block">View</a>
@@ -665,7 +689,7 @@
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
                                     <h3 class="text-lg font-bold mb-2">Course Website</h3>
-                                    <p class="text-sm mb-4">Create this page for a course creator to promote his course
+                                    <p class="text-base mb-4">Create this page for a course creator to promote his course
                                     </p>
                                     <a href="https://digitalskillsacademy.com.ng/amsb/" target="_blank"
                                         class="bg-white text-gray-800 py-2 px-4 rounded-lg inline-block">View</a>
@@ -677,7 +701,7 @@
                     <!-- Counter section -->
                     <div class="py-16 counter-section">
                         <div class="text-center">
-                            <h2 class="text-4xl font-bold mb-2">My Achievements</h2>
+                            <h2 class="text-2xl font-bold mb-2">My Achievements</h2>
                             <p class="text-lg font-semibold mb-8">I'm proud of my numbers</p>
                         </div>
                         <div class="flex flex-wrap justify-center">
@@ -708,7 +732,7 @@
             <section class="bg-gray-100 w-full p-4">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="lg:text-center">
-                        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        <p class="mt-2 text-2xl leading-8 font-extrabold tracking-tight text-gray-900">
                             What my clients say
                         </p>
                         <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
@@ -757,7 +781,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="mt-2 text-gray-600">
+                                <div class="mt-2 text-gray-600 text-base">
                                     <p>"Idris knows his onions well.
                                         I contacted him for a landing page for my affiliate product and he promised to
                                         deliver quality.
@@ -806,7 +830,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="mt-2 text-gray-600">
+                                <div class="mt-2 text-gray-600 text-base">
                                     <p>"I have worked with Adenaike Idris on multiple occasions, and I can confirm that
                                         he leaves me impressed every single time.
         
@@ -914,7 +938,7 @@
             </section> -->
 
             <section class="w-full p-4" id="blog">
-                <h2 class="text-xl font-bold mb-4">Week's Blog</h2>
+                <h2 class="text-2xl font-bold mb-4">Week's Blog</h2>
                 <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
                     <img src="./images/myimage.webp" alt=""
                         class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
@@ -1005,13 +1029,13 @@
             <section class="w-full bg-gray-100" id="contactme">
                 <div class="w-full h-full flex flex-row justify-center items-center">
                     <div class="w-full py-10">
-                        <div class="text-center text-4xl font-bold">Hire Me</div>
+                        <div class="text-center text-2xl font-bold">Hire Me</div>
                         <div class="p-4">
-                            <p class="text-lg mt-5">
+                            <p class="text-base mt-5">
                                 Are you looking to hire a professional web developer with years of experience? Look no
                                 further! I specialize in HTML, CSS, and have great experience in JavaScript and React.
                             </p>
-                            <p class="text-lg mt-5">
+                            <p class="text-base mt-5">
                                 With my expertise in various web frameworks such as Bootstrap, Tailwind, and Bulma, I
                                 can
                                 develop
@@ -1023,13 +1047,13 @@
                                     class="text-blue-500">Carrd.co</a> and <a href="https://systeme.io" target="_blank"
                                     rel="noopener" title="Systeme" class="text-blue-500">Systeme.io</a> .
                             </p>
-                            <p class="text-lg mt-5">
+                            <p class="text-base mt-5">
                                 I am also well-versed in using version control systems such as Git and GitHub, ensuring
                                 that
                                 your
                                 code is always well-maintained and up-to-date.
                             </p>
-                            <p class="text-lg mt-5">
+                            <p class="text-base mt-5">
                                 If you're ready to take your next project to the next level? Let's work together!
                                 Contact me
                                 through
@@ -1062,8 +1086,7 @@
                                         </div>
                                     </div>
                                     <div class="w-full">
-                                        <select id=""
-                                            class="slabel py-2 px-3 w-full outline-none text-base border border-gray-300 shadow rounded-lg text-blue-800 ilabel text-lg font-semibold text-black tracking-wider">
+                                        <select id=""  class="slabel py-2 px-6 w-full outline-none text-base border border-gray-300 shadow rounded-lg text-blue-800 ilabel text-lg font-semibold text-black tracking-wider">
                                             <option value="">Priority</option>
                                             <option value="">Personal</option>
                                             <option value="">Business</option>
@@ -1078,7 +1101,7 @@
                                         <div class="user-input relative w-full my-4">
                                             <br />
                                             <textarea id="message" name="message"
-                                                class="slabel py-2 px-3 w-full outline-none text-base border border-gray-300 shadow rounded-lg text-blue-800 textarea h-36 text-dark resize-none"
+                                                class="slabel py-2 px-6 w-full outline-none text-base border border-gray-300 shadow rounded-lg text-blue-800 textarea h-36 text-dark resize-none"
                                                 placeholder="">Hi, Drisaden. I want to secure a deal with you [your priority here]. Kindly send me your pricing list. Thanks</textarea>
                                         </div>
                                     </div>
@@ -1090,10 +1113,10 @@
                                     id="modal">
                                     <div class="bg-white p-8 rounded-md shadow-md">
                                         <h2 class="text-2xl font-bold mb-4">Thank you for your message!</h2>
-                                        <p class="mb-4">I will get back to you soon.</p>
+                                        <p class="mb-4 text-base">I will get back to you soon.</p>
                                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1Yf25s7GCh4x4LXblVcPi0kGryudraePTNlIWpr7zTgTbzQ/viewform"
                                             target="_blank"
-                                            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-lg">
                                             Book Call
                                         </a>
                                     </div>
@@ -1110,7 +1133,7 @@
             <div class="py-12">
                 <div class="flex flex-col md:flex-row">
                     <div class="my-auto w-full">
-                        <h2 class="px-3 text-3xl font-bold">Free Resources</h2>
+                        <h2 class="px-3 text-2xl font-bold">Free Resources</h2>
                         <p class="px-3 my-4">Download free books, video trainings and other resources here.</p>
                         <div class="border-b border-gray-400"></div>
                         <div class="flex flex-col">
@@ -1159,14 +1182,14 @@
                 </div>
             </div>
             <div class="py-12">
-                <h2 class="text-3xl font-bold mb-8 text-center">Must-Watch</h2>
+                <h2 class="text-2xl font-bold mb-8 text-center">Must-Watch</h2>
                 <div class="flex flex-wrap justify-center">
                     <div class="w-full mb-4 px-2">
                         <a href="#" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
                             <img src="path/to/video-thumbnail-1.jpg" alt="Video thumbnail" class="w-full rounded-t-lg">
                             <div class="p-4">
                                 <h3 class="text-lg font-medium mb-2">Title of Video</h3>
-                                <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <p class="text-gray-600 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing
                                     elit. Fusce faucibus commodo orci, vel auctor mauris placerat eu.</p>
                             </div>
                         </a>
@@ -1176,7 +1199,7 @@
                             <img src="path/to/video-thumbnail-2.jpg" alt="Video thumbnail" class="w-full rounded-t-lg">
                             <div class="p-4">
                                 <h3 class="text-lg font-medium mb-2">Title of Video</h3>
-                                <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <p class="text-gray-600 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing
                                     elit. Fusce faucibus commodo orci, vel auctor mauris placerat eu.</p>
                             </div>
                         </a>
@@ -1186,7 +1209,7 @@
                             <img src="path/to/video-thumbnail-3.jpg" alt="Video thumbnail" class="w-full rounded-t-lg">
                             <div class="p-4">
                                 <h3 class="text-lg font-medium mb-2">Title of Video</h3>
-                                <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                <p class="text-gray-600 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing
                                     elit. Fusce faucibus commodo orci, vel auctor mauris placerat eu.</p>
                             </div>
                         </a>
@@ -1231,7 +1254,7 @@
             <!-- Newsletter -->
             <div class="w-full md:w-1/2 lg:w-1/4 mb-6">
                 <h3 class="text-xl font-bold mb-4">Newsletter</h3>
-                <p>Sign up for my newsletter and stay up to date with my latest news and events.</p>
+                <p class="text-base">Sign up for my newsletter and stay up to date with my latest news and events.</p>
                 <form class="mt-4">
                     <div class="flex flex-wrap items-center">
                         <input type="email" placeholder="Enter your email"
