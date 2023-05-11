@@ -55,6 +55,10 @@
             background: linear-gradient(to right, #6FABD0, #9fcbe4);
         }
 
+        .bg-diamond-3 {
+            background:  #9fcbe4;
+        }
+
         .tx-diamond {
             color: #113247;
         }
@@ -101,6 +105,25 @@
             background-color: white;
             margin: 6px 0;
             transition: 0.4s;
+        }
+
+        .bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -2.7px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: #113247;
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: MOVE-BG;
+            animation-name: MOVE-BG;
         }
 
         .change .bar1 {
@@ -259,6 +282,31 @@
                 transform: translatey(0px);
             }
         }
+
+
+        @-webkit-keyframes MOVE-BG {
+            from {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+
+            to {
+                -webkit-transform: translateX(98px);
+                transform: translateX(98px);
+            }
+        }
+
+        @keyframes MOVE-BG {
+            from {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+
+            to {
+                -webkit-transform: translateX(98px);
+                transform: translateX(98px);
+            }
+        }
     </style>
 </head>
 
@@ -366,7 +414,9 @@
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                         <div class="md:flex">
                             <div class="md:w-1/2 px-4 py-6 md:py-8">
-                                <h2 class="text-2xl font-bold mb-4">About Me</h2>
+                                <h2 class="text-2xl font-bold">About Me</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 relative rounded-full"></div>
+
                                 <p class="text-gray-700 mb-4 text-base">My name is Adenaike Idris, a professional
                                     website designer
                                     and a digital expert. I help youths and young entrepreneurs leverage on the
@@ -390,6 +440,7 @@
                         <div class="md:flex">
                             <div class="px-4 py-6 md:py-8">
                                 <h2 class="text-2xl font-bold mb-4">My Story</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 relative rounded-full"></div>
                                 <p class="text-gray-700 mb-4 text-base">Do you ever feel like life is going nowhere, and
                                     you're
                                     stuck in a hopeless cycle of frustration and despair? That was me in 2020, a young
@@ -448,6 +499,7 @@
                             <!-- my skills -->
                             <div class="md:w-2/4 lg:w-2/4 p-10">
                                 <h2 class="text-2xl font-bold mb-4">My Skills</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 relative rounded-full"></div>
                                 <p class="text-label tx-diamond mt-5 leading-relaxed tracking-wider">Web Designing</p>
                                 <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                                     <div class="bg-diamond text-base font-medium text-blue-100 text-center p-0.5 leading-5 rounded-full"
@@ -477,6 +529,7 @@
                             </div>
                             <div class="md:w-2/4 lg:w-2/4 p-10 bg-gray-100 py-6 sm:py-12">
                                 <h2 class="text-2xl font-bold mb-5">Hobbies and Interests</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 relative rounded-full"></div>
                                 <p class="text-lg my-10 leading-relaxed tracking-wide"><i
                                         class="pr-3 tx-diamond fa fas fa-book"></i>
                                     Reading</p>
@@ -502,7 +555,9 @@
                         <div class="md:flex justify-between">
                             <!-- my experiences -->
                             <div class="md:w-2/4 lg:w-2/4 bg-gray-100 py-6 sm:py-12">
+
                                 <h2 class="text-2xl font-bold mb-4 ml-10 mt-5">My Experiences</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-10 relative rounded-full"></div>
                                 <div class="py-3 sm:max-w-xl sm:mx-auto w-full sm:px-0">
 
                                     <div class="relative text-gray-700 antialiased text-sm font-semibold">
@@ -591,6 +646,7 @@
                             </div>
                             <div class="md:w-2/4 lg:w-2/4 py-6 sm:py-12">
                                 <h2 class="text-2xl font-bold mb-4 ml-10 mt-5">My Education</h2>
+                                <div class="bar h-1 w-28 bg-diamond-3 mt-2 ml-10 mb-10 relative rounded-full"></div>
                                 <div class="py-3 sm:max-w-xl sm:mx-auto w-full sm:px-0">
 
                                     <div class="relative text-gray-700 antialiased text-sm font-semibold">
