@@ -166,6 +166,10 @@
             color: #6FABD0;
         }
 
+        .group:hover .hidden{
+    display: block;
+}
+
         .link-btn::before {
             content: '';
             position: absolute;
@@ -1147,8 +1151,7 @@
                 <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
                     <img src="./images/myimage.webp" alt=""
                         class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
-                    <div
-                        class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                    <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white text-sm">May 1, 2023</span>
                             <span class="bg-white rounded-lg px-3 py-1 text-sm    text-gray-600">Tech</span>
@@ -1162,17 +1165,111 @@
                                 <a href="#" target="_blank" rel="noopener"
                                     class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">Read
                                     More</a>
-                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20post!%20Blog%20Post%20Title%20%23Blog&url=https%3A%2F%2Fthemarketingjewel.com.ng%2F7-figure-business"
+                                <!-- <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20post!%20Blog%20Post%20Title%20%23Blog&url=https%3A%2F%2Fthemarketingjewel.com.ng%2F7-figure-business"
                                     target="_blank" rel="noopener"
                                     class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                                     <i class="fab fa-twitter"></i> Share
-                                </a>
+                                </a> -->
+                                <div class="flex items-center justify-center">
+                                    <div class="group relative">
+                                      <i class="fa-solid fa-share-nodes text-gray-500 text-2xl cursor-pointer transition-colors duration-300 ease-in-out group-hover:text-blue-500" title="share this post"></i>
+                                      <div class="hidden absolute -top-28 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg p-2 space-y-2 group-hover:block">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=[URL]&quote=[Check out this blog post]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://twitter.com/intent/tweet?text=[Check out this blog post]&url=[URL]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                                        <a  href="https://www.instagram.com/share?url=[URL]&caption=[CAPTION]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]&title=[TITLE]&summary=[SUMMARY]" class="text-gray-500 hover:text-black" target="_blank" rel="noopener noreferrer">
+                                          <i class="fab fa-linkedin"></i>
+                                        </a>
+                                      </div>
+                                    </div>
+                                </div>
                             </div>
-
+                
                         </div>
                     </div>
                 </div>
                 <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
+                    <img src="./images/myimage.webp" alt=""
+                        class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
+                    <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                        <div class="p-4 flex justify-between items-center mb-2">
+                            <span class="font-semibold text-white text-sm">May 1, 2023</span>
+                            <span class="bg-white rounded-lg px-3 py-1 text-sm    text-gray-600">Tech</span>
+                        </div>
+                        <div class="text-white absolute bottom-0 left-0 p-4">
+                            <a href="#" target="_blank">
+                                <div class="font-bold text-xl mb-2">How AI is helping small owners manage their budget
+                                    and reduce cost of service</div>
+                            </a>
+                            <div class="pt-6 py-4 flex justify-between items-center">
+                                <a href="#" target="_blank" rel="noopener"
+                                    class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">Read
+                                    More</a>
+                                <!-- <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20post!%20Blog%20Post%20Title%20%23Blog&url=https%3A%2F%2Fthemarketingjewel.com.ng%2F7-figure-business"
+                                    target="_blank" rel="noopener"
+                                    class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                    <i class="fab fa-twitter"></i> Share
+                                </a> -->
+                                <div class="flex items-center justify-center">
+                                    <div class="group relative">
+                                      <i class="fa-solid fa-share-nodes text-gray-500 text-2xl cursor-pointer transition-colors duration-300 ease-in-out group-hover:text-blue-500" title="share this post"></i>
+                                      <div class="hidden absolute -top-28 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg p-2 space-y-2 group-hover:block">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=[URL]&quote=[Check out this blog post]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://twitter.com/intent/tweet?text=[Check out this blog post]&url=[URL]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                                        <a  href="https://www.instagram.com/share?url=[URL]&caption=[CAPTION]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]&title=[TITLE]&summary=[SUMMARY]" class="text-gray-500 hover:text-black" target="_blank" rel="noopener noreferrer">
+                                          <i class="fab fa-linkedin"></i>
+                                        </a>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+                <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
+                    <img src="./images/myimage.webp" alt=""
+                        class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
+                    <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                        <div class="p-4 flex justify-between items-center mb-2">
+                            <span class="font-semibold text-white text-sm">May 1, 2023</span>
+                            <span class="bg-white rounded-lg px-3 py-1 text-sm    text-gray-600">Tech</span>
+                        </div>
+                        <div class="text-white absolute bottom-0 left-0 p-4">
+                            <a href="#" target="_blank">
+                                <div class="font-bold text-xl mb-2">How AI is helping small owners manage their budget
+                                    and reduce cost of service</div>
+                            </a>
+                            <div class="pt-6 py-4 flex justify-between items-center">
+                                <a href="#" target="_blank" rel="noopener"
+                                    class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">Read
+                                    More</a>
+                                <!-- <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20blog%20post!%20Blog%20Post%20Title%20%23Blog&url=https%3A%2F%2Fthemarketingjewel.com.ng%2F7-figure-business"
+                                    target="_blank" rel="noopener"
+                                    class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                    <i class="fab fa-twitter"></i> Share
+                                </a> -->
+                                <div class="flex items-center justify-center">
+                                    <div class="group relative">
+                                      <i class="fa-solid fa-share-nodes text-gray-500 text-2xl cursor-pointer transition-colors duration-300 ease-in-out group-hover:text-blue-500" title="share this post"></i>
+                                      <div class="hidden absolute -top-28 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg p-2 space-y-2 group-hover:block">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=[URL]&quote=[Check out this blog post]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://twitter.com/intent/tweet?text=[Check out this blog post]&url=[URL]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter"></i></a>
+                                        <a  href="https://www.instagram.com/share?url=[URL]&caption=[CAPTION]" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=[URL]&title=[TITLE]&summary=[SUMMARY]" class="text-gray-500 hover:text-black" target="_blank" rel="noopener noreferrer">
+                                          <i class="fab fa-linkedin"></i>
+                                        </a>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
                     <img src="./images/myimage.webp" alt=""
                         class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
                     <div
@@ -1227,7 +1324,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
             </section>
 
             <!-- Contact section -->
