@@ -30,6 +30,11 @@
         :root {
             --bg-color: #6FABD0;
             --text-diamond: #6FABD0;
+        } 
+
+        a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
         }
 
         textarea[placeholder] {
@@ -37,11 +42,6 @@
             font-weight: 400;
             line-height: 1.5;
             padding: 6px 15px;
-        }
-
-        a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
         }
 
         .animate_bounce {
@@ -169,6 +169,17 @@
 
         .group:hover .hidden{
     display: block;
+}
+
+ .image-container img {
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.image-container:hover img {
+  transform: scale(1.2);
 }
 
         .link-btn::before {
@@ -413,8 +424,10 @@
                     <a href="01AdenaikeIdrisResume.pdf"
                         class="transition duration-300 inline-block text-white bg-blue-500 py-3 px-6 rounded-md font-semibold text-lg mr-4 mb-4"
                         download>Download Résumé</a>
+
                     <a href="#portfolio"
-                        class="inline-block tx-diamond-2 border border-blue-500 btn-hover hover:text-white py-3 px-6 rounded-md font-semibold text-lg mb-4 transition duration-300">Portfolio</a>
+                        class="inline-block tx-diamond-2 border border-blue-500 btn-hover hover:text-white py-3 px-6 rounded-md font-semibold text-lg mb-4 transition duration-300">Portfolio
+                    </a>
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2">
@@ -453,7 +466,7 @@
                                     solution to the world's problems using technical approach and strategic marketing.
                                 </p>
                             </div>
-                            <div class="md:w-1/2">
+                            <div class="md:w-1/2 image-container relative overflow-hidden">
                                 <img src="./images/myimage.webp" alt="About Me Image"
                                     class="w-full h-full object-cover object-center">
                             </div>
@@ -863,7 +876,7 @@
                     <h2 class="text-2xl font-bold mb-4 ml-5 mt-5">My Recent Projects</h2>
                     <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-5 relative rounded-full"></div>
                     <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="relative">
+                        <div class="relative  image-container overflow-hidden">
                             <img src="./images/Santos_Portfolio.png" alt="A example of a graphic designer portfolio"
                                 class="w-full h-auto">
                             <div
@@ -878,7 +891,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="image-container relative overflow-hidden">
                             <img src="./images/amara-landing-page.webp" alt="internet-marketing-business-landing-page"
                                 class="mb-0 w-full h-auto">
                             <div
@@ -892,7 +905,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="image-container relative overflow-hidden">
                             <img src="./images/countdown-page.webp" alt="A countdown project example"
                                 class="w-full h-auto">
                             <div
@@ -907,7 +920,7 @@
                             </div>
                         </div>
 
-                        <div class="relative">
+                        <div class="image-container relative overflow-hidden">
                             <img src="./images/amsb.webp" alt="Online course website designer" class="w-full h-auto">
                             <div
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
@@ -1077,7 +1090,7 @@
                 <h2 class="text-2xl font-bold mb-4 ml-1 mt-5">My Recent Gallery</h2>
                 <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
                 <div class="container mx-auto w-full sm:px-4 px-0 md:w-2/3 relative h-1/2">
-                    <div class="mySlides" id="myslides">
+                    <div class="mySlides image-container relative overflow-hidden" id="myslides">
                         <div class="tx-sm text-gray-500 absolute top-0 py-2 px-3" id="photo-number">1 / 10</div>
                         <img src="" class="w-full" id="image">
                     </div>
@@ -1168,9 +1181,9 @@
             <section class="w-full md:py-16 p-6" id="blog">
                 <h2 class="text-2xl font-bold mb-4 ml-1 mt-5">Week's Blog</h2>
                 <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
-                <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
+                <div class="image-container relative overflow-hidden my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl">
                     <img src="./images/myimage.webp" alt=""
-                        class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
+                        class="cursor-pointer w-full h-auto object-cover">
                     <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
@@ -1202,9 +1215,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
+                <div class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
                     <img src="./images/myimage.webp" alt=""
-                        class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
+                        class="cursor-pointer w-full h-auto object-cover">
                     <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
@@ -1236,9 +1249,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative my-10 max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl">
+                <div class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
                     <img src="./images/myimage.webp" alt=""
-                        class="cursor-pointer w-full h-auto object-cover transform hover:scale-105 transition duration-300">
+                        class="cursor-pointer w-full h-auto object-cover">
                     <div  class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
@@ -1389,7 +1402,7 @@
                         <div class="border-b border-gray-400"></div>
                         <div class="flex flex-col">
                             <div class="px-3 flex flex-row my-6">
-                                <div class="mr-4 w-full">
+                                <div class="mr-4 w-full image-container relative overflow-hidden">
                                     <img class="w-full h-36" src="./images/free_e-books_on_various_topics.jpg"
                                         alt="Download free e-books on various topics">
                                 </div>
@@ -1404,7 +1417,7 @@
                         </div>
                         <div class="flex flex-col">
                             <div class="px-3 flex flex-row my-6">
-                                <div class="mr-4 w-full">
+                                <div class="mr-4 w-full image-container relative overflow-hidden">
                                     <img class="w-full h-36" src="./images/training.avif"
                                         alt="Affiliate Marketing Courses Now">
                                 </div>
@@ -1420,7 +1433,7 @@
                         </div>
                         <div class="flex flex-col">
                             <div class="px-3 flex flex-row my-6">
-                                <div class="mr-4 w-full">
+                                <div class="mr-4 w-full image-container relative overflow-hidden">
                                     <img class="w-full h-36" src="./images/template.avif"
                                         alt="Free Design Templates on various topics">
                                 </div>
