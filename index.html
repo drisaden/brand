@@ -27,16 +27,6 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link rel="icon" type="image/png" href="./images/myimage.webp">
     <style>
-        @media (max-width:699px) {
-            header{
-            background-image: url('images/myimage.jfif');
-        }
-        }
-        @media (min-width:700px) {
-            header{
-            background-image: url('images/lg-bg.png');
-        }
-        }
         
         :root {
             --bg-color: #6FABD0;
@@ -96,6 +86,10 @@
 
         .border-blue-500 {
             border-color: #6FABD0;
+        }
+
+        .border-diamond {
+            border-color: #113247;
         }
 
         /*h1,h2,h3,h4,h5,h6{
@@ -335,6 +329,18 @@
                 transform: translateX(98px);
             }
         }
+
+        @media (max-width:699px) {
+            header{
+            background-image: url('images/myimage.jfif');
+        }
+        }
+        
+        @media (min-width:700px) {
+            header{
+            background-image: url('images/lg-bg.png');
+        }
+        }
     </style>
 </head>
 
@@ -435,12 +441,12 @@
                         download>Download Résumé</a>
 
                     <a href="#portfolio"
-                        class="inline-block tx-diamond-2 border border-blue-500 btn-hover hover:text-white py-3 px-6 rounded-md font-semibold text-lg mb-4 transition duration-300">Portfolio
+                        class="inline-block relative link-btn tx-diamond-2 py-3 px-6 rounded-md font-semibold text-lg mb-4 transition duration-300">Portfolio
                     </a>
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2">
-                <img class="h-full w-full object-cover" src="images/lg-bg.png" alt="Drisaden Workspace">
+                <img class="h-94 w-94 object-cover" src="images/myimage2.jpg" alt="Drisaden Workspace">
             </div>
         </div>
         <div id="arrow-icons" class="hidden absolute md:bottom-32 bottom-24 left-2/4 flex items-center justify-center">
