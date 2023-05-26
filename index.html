@@ -236,6 +236,8 @@
             line-height: 1.25rem;
         }
 
+        
+
         /* .typed-out {
             width: 0;
             animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
@@ -333,6 +335,19 @@
             header {
                 background-image: url('./assets/images/myimage.jfif');
             }
+            .title {
+            /* position: absolute;
+            top: 50%;
+            left: 50%; */
+            transform: translate(-50%, - 50%);
+            /* font-size: 160px; */
+            -webkit-text-stroke: 1px #fff;
+            color: transparent;
+            background-image: linear-gradient(#fff, #fff);
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            background-position: -150px 0;
+        }
         }
 
         @media (min-width:700px) {
@@ -430,8 +445,9 @@
                 <span class="leading-none font-bold text-xl md:text-xl lg:text-2xl" id="typed"
                     style="font-family: 'Montserrat', sans-serif;"></span>
                 <div
-                    class="mt-10 text-5xl md:text-6xl lg:text-7xl animate__animated animate__fadeIn animate__slow animate__delay-3s">
-                    <h1 class="inline-block leading-none font-black"
+                    class="mt-10 text-5xl md:text-6xl lg:text-7xl animate__animated animate__fadeIn animate__slow">
+                    <!-- class="mt-10 text-5xl md:text-6xl lg:text-7xl animate__animated animate__fadeIn animate__slow animate__delay-3s"> -->
+                    <h1 class="title inline-block leading-none"
                         style="font-family: 'Montserrat', sans-serif; font-weight: 900;">DRISADEN <span
                             class="block mb-0 leading-none font-light text-2xl md:text-2xl lg:text-3xl text-white">Is
                             your go-to person!
@@ -898,8 +914,8 @@
                     <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-5 relative rounded-full"></div>
                     <div class="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="relative  image-container overflow-hidden">
-                            <img src="./assets/images/Santos_Portfolio.png" alt="A example of a graphic designer portfolio"
-                                class="w-full h-auto">
+                            <img src="./assets/images/Santos_Portfolio.png"
+                                alt="A example of a graphic designer portfolio" class="w-full h-auto">
                             <div
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
@@ -913,8 +929,8 @@
                             </div>
                         </div>
                         <div class="image-container relative overflow-hidden">
-                            <img src="./assets/images/amara-landing-page.webp" alt="internet-marketing-business-landing-page"
-                                class="mb-0 w-full h-auto">
+                            <img src="./assets/images/amara-landing-page.webp"
+                                alt="internet-marketing-business-landing-page" class="mb-0 w-full h-auto">
                             <div
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
@@ -941,7 +957,8 @@
                         </div>
 
                         <div class="image-container relative overflow-hidden">
-                            <img src="./assets/images/amsb.webp" alt="Online course website designer" class="w-full h-auto">
+                            <img src="./assets/images/amsb.webp" alt="Online course website designer"
+                                class="w-full h-auto">
                             <div
                                 class="overlay absolute top-0 left-0 w-full h-full bg-gray-800 opacity-80 transition-all duration-300">
                                 <div class="text-white absolute bottom-0 left-0 p-4">
@@ -1010,7 +1027,8 @@
                                 <div class="md:flex items-start justify-between">
                                     <div class="flex">
                                         <div class="flex-shrink-0">
-                                            <img class="h-12 w-12 rounded-full" src="./assets/images/amibelle.webp" alt="">
+                                            <img class="h-12 w-12 rounded-full" src="./assets/images/amibelle.webp"
+                                                alt="">
                                         </div>
                                         <div class="ml-4">
                                             <h3 class="text-lg font-medium text-gray-900">Amara Elufowoju</h3>
@@ -1059,7 +1077,8 @@
                                 <div class="md:flex items-start justify-between">
                                     <div class="flex">
                                         <div class="flex-shrink-0">
-                                            <img class="h-12 w-12 rounded-full" src="./assets/images/danielsampson.jpg" alt="">
+                                            <img class="h-12 w-12 rounded-full" src="./assets/images/danielsampson.jpg"
+                                                alt="">
                                         </div>
                                         <div class="ml-4">
                                             <h3 class="text-lg font-medium text-gray-900">Daniel Sampson</h3>
@@ -1114,7 +1133,8 @@
                 <h2 class="text-2xl font-bold mb-4 ml-1 mt-5">My Recent Gallery</h2>
                 <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
                 <div class="container mx-auto w-full sm:px-4 px-0 md:w-2/3 relative h-1/2">
-                    <div class="mySlides image-container relative overflow-hidden md:h-full sm:h-72 w-auto" id="myslides">
+                    <div class="mySlides image-container relative overflow-hidden md:h-full sm:h-72 w-auto"
+                        id="myslides">
                         <div class="tx-sm text-gray-500 absolute top-0 py-2 px-3" id="photo-number">1 / 10</div>
                         <img src="" class="w-full h-fit" id="image">
                     </div>
@@ -1130,22 +1150,25 @@
                             onclick="currentSlide(1)" alt="With my mentor and buddy">
                         <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/with-talented-tobi.webp"
                             onclick="currentSlide(2)" alt="With Facebook Traffic Hacker Talented Tobi">
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/with-no1-cpa-marketer-in-Nig.webp"
-                            onclick="currentSlide(3)" alt="Slant Portrait with No. 1 CPA Marketer in Nig.">
+                        <img class="w-36 m-2 h-fit demo cursor-pointer"
+                            src="./assets/images/with-no1-cpa-marketer-in-Nig.webp" onclick="currentSlide(3)"
+                            alt="Slant Portrait with No. 1 CPA Marketer in Nig.">
 
                         <img class="w-36 m-2 h-fit demo cursor-pointer"
                             src="./assets/images/selfie-with-linkedIn-expert-inneh.webp" onclick="currentSlide(4)"
                             alt="Selfie with LinkedIn expert-Joseph Inneh">
 
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/portrait-with-boss-gozie.webp"
-                            onclick="currentSlide(5)" alt="Portrait with FIC owners-Boss Chigozie">
+                        <img class="w-36 m-2 h-fit demo cursor-pointer"
+                            src="./assets/images/portrait-with-boss-gozie.webp" onclick="currentSlide(5)"
+                            alt="Portrait with FIC owners-Boss Chigozie">
 
                         <img class="w-36 m-2 h-fit demo cursor-pointer"
                             src="./assets/images/portrait with top female entrepreneur in nig-JoyAgbim.webp"
                             onclick="currentSlide(6)" alt="Portrait with an industry expert-JoyAgbim">
 
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/selfie in lagos bar beach.webp"
-                            onclick="currentSlide(7)" alt="Selfie in lagos bar beach-Lekki">
+                        <img class="w-36 m-2 h-fit demo cursor-pointer"
+                            src="./assets/images/selfie in lagos bar beach.webp" onclick="currentSlide(7)"
+                            alt="Selfie in lagos bar beach-Lekki">
 
                         <img class="w-36 m-2 h-fit demo cursor-pointer"
                             src="./assets/images/at-oversea-private-investment-corporation-at-abeokuta.webp"
@@ -1155,8 +1178,8 @@
                             onclick="currentSlide(9)" alt="A quick selfie on election day, 2023">
 
                         <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/throwback-to-2020-still-learning-coding.webp" onclick="currentSlide(10)"
-                            alt="When I'm still learning coding at Rayyantech">
+                            src="./assets/images/throwback-to-2020-still-learning-coding.webp"
+                            onclick="currentSlide(10)" alt="When I'm still learning coding at Rayyantech">
                     </div>
                 </div>
             </section>
@@ -1204,10 +1227,13 @@
                 <h2 class="text-2xl font-bold mb-4 ml-1 mt-5">Week's Blog</h2>
                 <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
 
-                <div class="image-container relative overflow-hidden my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl">
-                    <img src="./assets/images/howaiismakingsmallbizrevenue.jfif" alt="" class="cursor-pointer w-full h-auto object-cover">
+                <div
+                    class="image-container relative overflow-hidden my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl">
+                    <img src="./assets/images/howaiismakingsmallbizrevenue.jfif" alt=""
+                        class="cursor-pointer w-full h-auto object-cover">
 
-                    <div class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                    <div
+                        class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
                             <span class="bg-white rounded-lg px-3 py-1 tx-sm text-gray-600">Tech</span>
@@ -1252,16 +1278,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
-                    <img src="./assets/images/10internetfraud.jfif" alt="" class="cursor-pointer w-full h-auto object-cover">
-                    <div class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                <div
+                    class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
+                    <img src="./assets/images/10internetfraud.jfif" alt=""
+                        class="cursor-pointer w-full h-auto object-cover">
+                    <div
+                        class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
                             <span class="bg-white rounded-lg px-3 py-1 tx-sm text-gray-600">Tech</span>
                         </div>
                         <div class="text-white absolute bottom-0 left-0 p-4">
                             <a href="#" target="_blank">
-                                <div class="font-bold md:text-xl text-base mb-2">10 Internet frauds you must beware of and how to avoid them</div>
+                                <div class="font-bold md:text-xl text-base mb-2">10 Internet frauds you must beware of
+                                    and how to avoid them</div>
                             </a>
                             <div class="flex justify-between items-center">
                                 <a href="#" target="_blank" rel="noopener"
@@ -1297,16 +1327,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
-                    <img src="./assets/images/4waystomonetiseyourblog.jfif" alt="" class="cursor-pointer w-full h-auto object-cover">
-                    <div class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
+                <div
+                    class="my-10 max-w-md mx-auto rounded shadow-lg hover:shadow-xl image-container relative overflow-hidden">
+                    <img src="./assets/images/4waystomonetiseyourblog.jfif" alt=""
+                        class="cursor-pointer w-full h-auto object-cover">
+                    <div
+                        class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300">
                         <div class="p-4 flex justify-between items-center mb-2">
                             <span class="font-semibold text-white tx-sm">May 1, 2023</span>
                             <span class="bg-white rounded-lg px-3 py-1 tx-sm text-gray-600">Tech</span>
                         </div>
                         <div class="text-white absolute bottom-0 left-0 p-4">
                             <a href="#" target="_blank">
-                                <div class="font-bold md:text-xl text-base mb-2">4 profitable ways to monetise your website with no technical knowledge</div>
+                                <div class="font-bold md:text-xl text-base mb-2">4 profitable ways to monetise your
+                                    website with no technical knowledge</div>
                             </a>
                             <div class="flex justify-between items-center">
                                 <a href="#" target="_blank" rel="noopener"
@@ -1587,7 +1621,8 @@
                             class="link-btn inline-block relative leading-none">Portfolio</a></li>
                     <li class="my-3"><a href="#contact" class="link-btn inline-block relative leading-none">Contact</a>
                     </li>
-                    <li class="my-3"><a href="./privacy_policy.html" class="link-btn inline-block relative leading-none">Privacy
+                    <li class="my-3"><a href="./privacy_policy.html"
+                            class="link-btn inline-block relative leading-none">Privacy
                             Policy</a></li>
                     <li class="my-3"><a href="#contact" class="link-btn inline-block relative leading-none">Terms of
                             Service</a></li>
