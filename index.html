@@ -132,6 +132,12 @@
             animation-name: MOVE-BG;
         }
 
+        .carousel{
+            scroll-snap-type:x mandatory;scroll-behavior:smooth;-ms-overflow-style:none;scrollbar-width:none;display:flex;overflow-x:scroll
+        }
+
+        .carousel-item{box-sizing:content-box;scroll-snap-align:start;flex:none;display:flex}
+
         .change .bar1 {
             transform: translate(0, 11px) rotate(-45deg);
         }
@@ -1038,13 +1044,8 @@
                     </div>
         
                     <div class="mt-10">
-                        <div class="mx-auto  p-4 rounded-box" style="scroll-snap-align: center; scroll-snap-type: x mandatory;
-                        scroll-behavior: smooth;
-                        -ms-overflow-style: none;
-                        scrollbar-width: none;
-                        display: flex;
-                        overflow-x: scroll;">
-                            <div class="relative flex flex-col my-10 mx-auto w-11/12 md:w-2/5 p-6 bg-white rounded-lg shadow-md flex-none" style="box-sizing: content-box;scroll-snap-align: start;">
+                        <div class="mx-auto  p-4 rounded-box carousel">
+                            <div class="relative flex flex-col my-10 ml-1 mx-auto w-11/12 md:w-2/5 p-6 bg-white rounded-lg shadow-md carousel-item">
                                 <div class="w-full md:flex items-start justify-between">
                                     <div class="flex">
                                         <div class="flex-shrink-0">
@@ -1089,7 +1090,7 @@
                                     <i class="fas fa-quote-right absolute -bottom-8 right-0 text-7xl text-gray-400 mt-10 ml-6"></i>
                                 </div>
                             </div>
-                            <div class="relative flex flex-col my-10 mx-auto w-11/12 md:w-2/5 carousel-item p-6 bg-white rounded-lg shadow-md">
+                            <div class="relative flex flex-col my-10 ml-1 mx-auto w-11/12 md:w-2/5 p-6 bg-white rounded-lg shadow-md carousel-item">
                                 <div class="w-full md:flex items-start justify-between">
                                     <div class="flex">
                                         <div class="flex-shrink-0">
