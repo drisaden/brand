@@ -1141,60 +1141,19 @@
             </section>
 
             <!-- Gallery section -->
-            <section id="gallery" class="md:py-16 p-4 animated">
-                <h2 class="text-2xl tx-2xl font-bold mb-4 ml-1 mt-5">My Recent Gallery</h2>
-                <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
-                <div class="container mx-auto w-full sm:px-4 px-0 md:w-2/3 relative h-1/2">
-                    <div class="mySlides image-container relative overflow-hidden md:h-full sm:h-72 w-auto"
-                        id="myslides">
-                        <div class="tx-sm text-gray-500 absolute top-0 py-2 px-3" id="photo-number">1 / 10</div>
-                        <img src="" class="w-full h-fit" id="image">
-                    </div>
-                    <a class="prev cursor-pointer absolute top-1/4 mt-10 left-0 w-auto ml-10 text-white font-bold text-2xl tx-2xl rounded-r-lg select-none"
-                        onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next cursor-pointer absolute top-1/4 mt-10 w-auto mr-10 text-white font-bold text-2xl tx-2xl rounded-r-lg select-none right-0 rounded-r-3px"
-                        onclick="plusSlides(1)">&#10095;</a>
-                    <div class="text-center bg-gray-900 py-2 px-4 text-white">
-                        <p id="caption"></p>
-                    </div>
-                    <div class="flex w-full overflow-x-scroll" id="second-s">
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/with-calebandtalented.png"
-                            onclick="currentSlide(1)" alt="With my mentor and buddy">
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/with-talented-tobi.webp"
-                            onclick="currentSlide(2)" alt="With Facebook Traffic Hacker Talented Tobi">
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/with-no1-cpa-marketer-in-Nig.webp" onclick="currentSlide(3)"
-                            alt="Slant Portrait with No. 1 CPA Marketer in Nig.">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/selfie-with-linkedIn-expert-inneh.webp" onclick="currentSlide(4)"
-                            alt="Selfie with LinkedIn expert-Joseph Inneh">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/portrait-with-boss-gozie.webp" onclick="currentSlide(5)"
-                            alt="Portrait with FIC owners-Boss Chigozie">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/portrait with top female entrepreneur in nig-JoyAgbim.webp"
-                            onclick="currentSlide(6)" alt="Portrait with an industry expert-JoyAgbim">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/selfie in lagos bar beach.webp" onclick="currentSlide(7)"
-                            alt="Selfie in lagos bar beach-Lekki">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/at-oversea-private-investment-corporation-at-abeokuta.webp"
-                            onclick="currentSlide(8)" alt="(OPIC)-at Abeokuta">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer" src="./assets/images/2023-election-day.webp"
-                            onclick="currentSlide(9)" alt="A quick selfie on election day, 2023">
-
-                        <img class="w-36 m-2 h-fit demo cursor-pointer"
-                            src="./assets/images/throwback-to-2020-still-learning-coding.webp"
-                            onclick="currentSlide(10)" alt="When I'm still learning coding at Rayyantech">
-                    </div>
-                </div>
-            </section>
+    <section id="gallery" class="md:py-16 p-4 animated">
+        <h2 class="text-2xl font-bold mb-4 ml-1 mt-5">My Recent Gallery</h2>
+        <div class="bar h-1 w-28 bg-diamond-3 mt-2 mb-10 ml-1 relative rounded-full"></div>
+        <div class="container mx-auto w-full sm:px-4 px-0 md:w-2/5 relative h-1/2">
+            <div class="mySlides image-container relative overflow-hidden h-96 w-auto" id="myslides">
+                <div class="tx-sm text-gray-500 absolute top-0 py-2 px-3" id="photo-number"></div>
+                <img src="" class="w-full h-fit" id="image">
+            </div>
+            <div class="flex w-full overflow-x-scroll" id="second-s">
+               
+            </div>
+        </div>
+    </section>
 
             <!-- 7th section -->
             <!-- <section class="bg-white py-16">
@@ -1773,58 +1732,130 @@
             startCounters();
         });
 
-
-
-        const mySlides = document.getElementById("myslides");
-        const image = document.getElementById("image");
-        const photoNumber = document.getElementById("photo-number");
-        const caption = document.getElementById("caption");
-        const demo = document.getElementsByClassName("demo");
         const secondS = document.getElementById("second-s");
+const image = document.getElementById("image");
 
-        let slideIndex = 1;
+let images = [];
+let currentIndex = 0;
 
-        function showSlides(n) {
-            let i;
-            const slides = document.getElementsByClassName("demo");
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            image.src = slides[slideIndex - 1].src;
-            slides[slideIndex - 1].classList.add("active");
-            photoNumber.innerHTML = `${slideIndex} / ${slides.length}`;
-            caption.innerHTML = slides[slideIndex - 1].alt;
-        }
+// Fetch images from the specified URL
+function fetchImages() {
+  const url = "https://galleria.sgm.ng/1CEPCDtALe9BAupm9";
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      images = data;
+      console.log(data)
+      renderImages();
+      startSlideshow();
+    })
+    .catch((error) => {
+      console.error("Error fetching images", error);
+    });
+}
 
-        secondS.addEventListener("click", function (event) {
-            if (event.target.className.includes("demo")) {
-                currentSlide(parseInt(event.target.dataset.index));
-            }
-        });
+// Render images inside the "second-s" element
+function renderImages() {
+    const imageContainer = document.getElementById("second-s");
+  imageContainer.innerHTML = "";
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+  images.forEach((imageUrl, index) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = imageUrl;
+    imgElement.classList.add("w-36", "m-2", "h-36", "demo", "cursor-pointer");
+    imgElement.dataset.index = index;
+    imgElement.addEventListener("click", () => currentSlide(index));
 
-        mySlides.addEventListener("click", function (event) {
-            if (event.target.className.includes("left-0")) {
-                plusSlides(-1);
-            } else if (event.target.className.includes("right-0")) {
-                plusSlides(1);
-            }
-        });
+    imageContainer.appendChild(imgElement);
+  });
+}
 
-        showSlides(slideIndex);
+// Start automatic slideshow with a 3-second interval
+function startSlideshow() {
+  setInterval(() => {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+    showSlides(currentIndex);
+  }, 3000);
+}
+
+// Display the slide with the given index
+function showSlides(index) {
+  const slides = document.getElementsByClassName("demo");
+  const photoNumber = document.getElementById("photo-number");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+
+  image.src = images[index];
+  slides[index].classList.add("active");
+  photoNumber.textContent = `${index + 1} / ${images.length}`;
+}
+// Set the current slide
+function currentSlide(index) {
+  currentIndex = index;
+  showSlides(currentIndex);
+}
+
+// Event listener for previous and next slide buttons
+document.addEventListener("DOMContentLoaded", function () {
+  fetchImages();
+});
+
+        // const mySlides = document.getElementById("myslides");
+        // const image = document.getElementById("image");
+        // const photoNumber = document.getElementById("photo-number");
+        // const caption = document.getElementById("caption");
+        // const demo = document.getElementsByClassName("demo");
+        // const secondS = document.getElementById("second-s");
+
+        // let slideIndex = 1;
+
+        // function showSlides(n) {
+        //     let i;
+        //     const slides = document.getElementsByClassName("demo");
+        //     if (n > slides.length) {
+        //         slideIndex = 1;
+        //     }
+        //     if (n < 1) {
+        //         slideIndex = slides.length;
+        //     }
+        //     for (i = 0; i < slides.length; i++) {
+        //         slides[i].classList.remove("active");
+        //     }
+        //     image.src = slides[slideIndex - 1].src;
+        //     slides[slideIndex - 1].classList.add("active");
+        //     photoNumber.innerHTML = `${slideIndex} / ${slides.length}`;
+        //     caption.innerHTML = slides[slideIndex - 1].alt;
+        // }
+
+        // function currentSlide(n) {
+        //     showSlides(slideIndex = n);
+        // }
+
+        // secondS.addEventListener("click", function (event) {
+        //     if (event.target.className.includes("demo")) {
+        //         currentSlide(parseInt(event.target.dataset.index));
+        //     }
+        // });
+
+        // function plusSlides(n) {
+        //     showSlides(slideIndex += n);
+        // }
+
+        // mySlides.addEventListener("click", function (event) {
+        //     if (event.target.className.includes("left-0")) {
+        //         plusSlides(-1);
+        //     } else if (event.target.className.includes("right-0")) {
+        //         plusSlides(1);
+        //     }
+        // });
+
+        // showSlides(slideIndex);
 
         const form = document.querySelector('#hire-form');
         const submitBtn = document.querySelector('#submit-btn');
