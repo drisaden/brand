@@ -45,7 +45,7 @@ function countUp(element) {
     let increment = Math.ceil(target / 100);
     if (count < target) {
         element.innerText = count + increment;
-        setTimeout(function () { countUp(element) }, 10);
+        setTimeout(function () { countUp(element) }, 20);
     } else {
         element.innerText = target;
     }
@@ -139,57 +139,6 @@ showSlides(currentIndex);
 document.addEventListener("DOMContentLoaded", function () {
 fetchImages();
 });
-
-// const mySlides = document.getElementById("myslides");
-// const image = document.getElementById("image");
-// const photoNumber = document.getElementById("photo-number");
-// const caption = document.getElementById("caption");
-// const demo = document.getElementsByClassName("demo");
-// const secondS = document.getElementById("second-s");
-
-// let slideIndex = 1;
-
-// function showSlides(n) {
-//     let i;
-//     const slides = document.getElementsByClassName("demo");
-//     if (n > slides.length) {
-//         slideIndex = 1;
-//     }
-//     if (n < 1) {
-//         slideIndex = slides.length;
-//     }
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].classList.remove("active");
-//     }
-//     image.src = slides[slideIndex - 1].src;
-//     slides[slideIndex - 1].classList.add("active");
-//     photoNumber.innerHTML = `${slideIndex} / ${slides.length}`;
-//     caption.innerHTML = slides[slideIndex - 1].alt;
-// }
-
-// function currentSlide(n) {
-//     showSlides(slideIndex = n);
-// }
-
-// secondS.addEventListener("click", function (event) {
-//     if (event.target.className.includes("demo")) {
-//         currentSlide(parseInt(event.target.dataset.index));
-//     }
-// });
-
-// function plusSlides(n) {
-//     showSlides(slideIndex += n);
-// }
-
-// mySlides.addEventListener("click", function (event) {
-//     if (event.target.className.includes("left-0")) {
-//         plusSlides(-1);
-//     } else if (event.target.className.includes("right-0")) {
-//         plusSlides(1);
-//     }
-// });
-
-// showSlides(slideIndex);
 
 const form = document.querySelector('#hire-form');
 const submitBtn = document.querySelector('#submit-btn');
