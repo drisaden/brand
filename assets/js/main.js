@@ -67,58 +67,129 @@ window.addEventListener('scroll', function () {
     startCounters();
 });
 
-
-
-const mySlides = document.getElementById("myslides");
-const image = document.getElementById("image");
-const photoNumber = document.getElementById("photo-number");
-const caption = document.getElementById("caption");
-const demo = document.getElementsByClassName("demo");
 const secondS = document.getElementById("second-s");
+const image = document.getElementById("image");
 
-let slideIndex = 1;
+let images = [];
+let currentIndex = 0;
 
-function showSlides(n) {
-    let i;
-    const slides = document.getElementsByClassName("demo");
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-    image.src = slides[slideIndex - 1].src;
-    slides[slideIndex - 1].classList.add("active");
-    photoNumber.innerHTML = `${slideIndex} / ${slides.length}`;
-    caption.innerHTML = slides[slideIndex - 1].alt;
+// Fetch images from the specified URL
+function fetchImages() {
+const url = "https://galleria.sgm.ng/1CEPCDtALe9BAupm9";
+
+fetch(url)
+.then((response) => response.json())
+.then((data) => {
+images = data;
+renderImages();
+startSlideshow();
+})
+.catch((error) => {
+console.error("Error fetching images", error);
+});
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+// Render images inside the "second-s" element
+function renderImages() {
+const imageContainer = document.getElementById("second-s");
+imageContainer.innerHTML = "";
+
+images.forEach((imageUrl, index) => {
+const imgElement = document.createElement("img");
+imgElement.src = imageUrl;
+imgElement.classList.add("w-36", "m-2", "h-36", "demo", "cursor-pointer");
+imgElement.dataset.index = index;
+imgElement.addEventListener("click", () => currentSlide(index));
+
+imageContainer.appendChild(imgElement);
+});
 }
 
-secondS.addEventListener("click", function (event) {
-    if (event.target.className.includes("demo")) {
-        currentSlide(parseInt(event.target.dataset.index));
-    }
+// Start automatic slideshow with a 3-second interval
+function startSlideshow() {
+setInterval(() => {
+currentIndex++;
+if (currentIndex >= images.length) {
+currentIndex = 0;
+}
+showSlides(currentIndex);
+}, 3000);
+}
+
+// Display the slide with the given index
+function showSlides(index) {
+const slides = document.getElementsByClassName("demo");
+const photoNumber = document.getElementById("photo-number");
+
+for (let i = 0; i < slides.length; i++) {
+slides[i].classList.remove("active");
+}
+
+image.src = images[index];
+slides[index].classList.add("active");
+photoNumber.textContent = `${index + 1} / ${images.length}`;
+}
+// Set the current slide
+function currentSlide(index) {
+currentIndex = index;
+showSlides(currentIndex);
+}
+
+// Event listener for previous and next slide buttons
+document.addEventListener("DOMContentLoaded", function () {
+fetchImages();
 });
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+// const mySlides = document.getElementById("myslides");
+// const image = document.getElementById("image");
+// const photoNumber = document.getElementById("photo-number");
+// const caption = document.getElementById("caption");
+// const demo = document.getElementsByClassName("demo");
+// const secondS = document.getElementById("second-s");
 
-mySlides.addEventListener("click", function (event) {
-    if (event.target.className.includes("left-0")) {
-        plusSlides(-1);
-    } else if (event.target.className.includes("right-0")) {
-        plusSlides(1);
-    }
-});
+// let slideIndex = 1;
 
-showSlides(slideIndex);
+// function showSlides(n) {
+//     let i;
+//     const slides = document.getElementsByClassName("demo");
+//     if (n > slides.length) {
+//         slideIndex = 1;
+//     }
+//     if (n < 1) {
+//         slideIndex = slides.length;
+//     }
+//     for (i = 0; i < slides.length; i++) {
+//         slides[i].classList.remove("active");
+//     }
+//     image.src = slides[slideIndex - 1].src;
+//     slides[slideIndex - 1].classList.add("active");
+//     photoNumber.innerHTML = `${slideIndex} / ${slides.length}`;
+//     caption.innerHTML = slides[slideIndex - 1].alt;
+// }
+
+// function currentSlide(n) {
+//     showSlides(slideIndex = n);
+// }
+
+// secondS.addEventListener("click", function (event) {
+//     if (event.target.className.includes("demo")) {
+//         currentSlide(parseInt(event.target.dataset.index));
+//     }
+// });
+
+// function plusSlides(n) {
+//     showSlides(slideIndex += n);
+// }
+
+// mySlides.addEventListener("click", function (event) {
+//     if (event.target.className.includes("left-0")) {
+//         plusSlides(-1);
+//     } else if (event.target.className.includes("right-0")) {
+//         plusSlides(1);
+//     }
+// });
+
+// showSlides(slideIndex);
 
 const form = document.querySelector('#hire-form');
 const submitBtn = document.querySelector('#submit-btn');
@@ -165,4 +236,4 @@ scrollToTopBtn.addEventListener("click", () => {
         top: 0,
         behavior: "smooth"
     });
-})
+});
