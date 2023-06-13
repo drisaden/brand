@@ -1746,7 +1746,6 @@ function fetchImages() {
     .then((response) => response.json())
     .then((data) => {
       images = data;
-      console.log(data)
       renderImages();
       startSlideshow();
     })
