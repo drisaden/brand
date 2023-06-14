@@ -43,24 +43,40 @@ let progressBarList = document.querySelectorAll(".circular-progress");
 let valueContainerList = document.querySelectorAll(".value-container");
 
 let speed = 50;
+let startAnimation = false;
 
-progressBarList.forEach((progressBar, index) => {
-  let progressValue = 0;
-  let progressEndValue = parseInt(valueContainerList[index].textContent);
+window.addEventListener("scroll", () => {
+  if (!startAnimation && isElementInViewport(progressBarList[0])) {
+    startAnimation = true;
+    progressBarList.forEach((progressBar, index) => {
+      let progressValue = 0;
+      let progressEndValue = parseInt(valueContainerList[index].textContent);
 
-  let progress = setInterval(() => {
-    progressValue++;
-    valueContainerList[index].textContent = `${progressValue}`;
-    progressBar.style.background = `conic-gradient(
-      #113247 ${progressValue * 3.6}deg,
-      #cadcff ${progressValue * 3.6}deg
-    )`;
+      let progress = setInterval(() => {
+        progressValue++;
+        valueContainerList[index].textContent = `${progressValue}`;
+        progressBar.style.background = `conic-gradient(
+          #113247 ${progressValue * 3.6}deg,
+          #cadcff ${progressValue * 3.6}deg
+        )`;
 
-    if (progressValue >= progressEndValue) {
-      clearInterval(progress);
-    }
-  }, speed);
+        if (progressValue >= progressEndValue) {
+          clearInterval(progress);
+        }
+      }, speed);
+    });
+  }
 });
+
+function isElementInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 // function countUp(element) {
 //     let target = parseInt(element.getAttribute('data-target'));
 //     let count = parseInt(element.innerText);
