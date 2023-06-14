@@ -39,33 +39,55 @@ var typed = new Typed('#typed', {
     startDelay: 2000,
 });
 
-function countUp(element) {
-    let target = parseInt(element.getAttribute('data-target'));
-    let count = parseInt(element.innerText);
-    let increment = Math.ceil(target / 100);
-    if (count < target) {
-        element.innerText = count + increment;
-        setTimeout(function () { countUp(element) }, 20);
-    } else {
-        element.innerText = target;
-    }
-}
+let progressBarList = document.querySelectorAll(".circular-progress");
+let valueContainerList = document.querySelectorAll(".value-container");
 
-function startCounters() {
-    let counters = document.querySelectorAll('.counter');
-    let scrollTop = window.pageYOffset + window.innerHeight;
-    let counterSection = document.querySelector('.counter-section');
-    if (scrollTop > counterSection.offsetTop && !counterSection.classList.contains('counted')) {
-        counters.forEach(function (counter) {
-            countUp(counter);
-        });
-        counterSection.classList.add('counted');
-    }
-}
+let speed = 50;
 
-window.addEventListener('scroll', function () {
-    startCounters();
+progressBarList.forEach((progressBar, index) => {
+  let progressValue = 0;
+  let progressEndValue = parseInt(valueContainerList[index].textContent);
+
+  let progress = setInterval(() => {
+    progressValue++;
+    valueContainerList[index].textContent = `${progressValue}`;
+    progressBar.style.background = `conic-gradient(
+      #113247 ${progressValue * 3.6}deg,
+      #cadcff ${progressValue * 3.6}deg
+    )`;
+
+    if (progressValue >= progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
 });
+// function countUp(element) {
+//     let target = parseInt(element.getAttribute('data-target'));
+//     let count = parseInt(element.innerText);
+//     let increment = Math.ceil(target / 100);
+//     if (count < target) {
+//         element.innerText = count + increment;
+//         setTimeout(function () { countUp(element) }, 20);
+//     } else {
+//         element.innerText = target;
+//     }
+// }
+
+// function startCounters() {
+//     let counters = document.querySelectorAll('.counter');
+//     let scrollTop = window.pageYOffset + window.innerHeight;
+//     let counterSection = document.querySelector('.counter-section');
+//     if (scrollTop > counterSection.offsetTop && !counterSection.classList.contains('counted')) {
+//         counters.forEach(function (counter) {
+//             countUp(counter);
+//         });
+//         counterSection.classList.add('counted');
+//     }
+// }
+
+// window.addEventListener('scroll', function () {
+//     startCounters();
+// });
 
 const secondS = document.getElementById("second-s");
 const image = document.getElementById("image");
