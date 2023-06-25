@@ -6,16 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title-h">
-        Bloggr
+        
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 
 <body>
-    <!-- <center>
-        <h1>Single Blog</h1>
-    </center> -->
-
     <div id="cont">
         <h1 id="title"></h1>
         <!-- <p id="descr"></p> -->
@@ -36,8 +32,8 @@
                 .then(res => res.json())
                 .then((data) => {
                     console.log(data)
-                    document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('#title-h').innerHTML = data.title;
+                    document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('#published').innerHTML = data.published.split('T')[0];
                     document.querySelector('#content').innerHTML = data.content;
                 });
