@@ -85,7 +85,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
             </p>
             <p class="text-gray-700 mb-4" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
             
-            <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="url">Read More</button>
+            <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="url">Read More</button></a>
         </div>`
         });
 
@@ -94,7 +94,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
         <h2 class="text-xl font-bold mb-1" id="title">${item.title}</h2>
         <p class="text-gray-700 mb-3  truncate" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
             <p class="flex items-center justify-between mb-1"><span class="text-sm font-bold italic">Adenaike Idris</span><small class="text-sm text-gray-600" id="published">${item.published.split('T')[0]}</small></p>
-        <a href="#" class="link-btn mt-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none" id="url">Read
+        <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn mt-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none" id="url">Read
             Article</a>
     </div>
     <div class="block md:hidden border-b border-gray-400 mx-4 my-6"></div>
@@ -148,7 +148,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                    <p class="text-gray-700 mb-4">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 16).join(' ')}...</p>-->
                    <p class="text-gray-700 mb-4">${item.content.replace(/<\/?[^>]+(>|$)/g, "").trim().substr(0, 90)}...</p>
 
-                    <a href="#" class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none">Read
+                    <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none">Read
                         Article</a>
                 </div>
             </div>`
@@ -166,7 +166,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                 <div class="p-4 bg-white">
                     <h2 class="text-xl font-bold mb-2">${item.title}</h2>
                     <p class="text-gray-700 mb-4">${item.content.replace(/<\/?[^>]+(>|$)/g, "").trim().substr(0, 120)}...</p>
-                    <a href="#" class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative  leading-none">Read
+                    <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative  leading-none">Read
                         Article</a>
                 </div>`
         });
@@ -239,7 +239,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                     </p>
                     <p class="text-gray-700 mb-4">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
 
-                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Read More</button>
+                    <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Read More</button></a>
                 </div>
             </div>`
 
@@ -259,7 +259,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                         <div class="w-full md:w-2/5 px-4 bg-white">
                             <h2 class="text-xl font-bold mb-2">${item.title}</h2>
                             <p class="text-gray-700 mb-4">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
-                            <a href="#"
+                            <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"
                                 class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative  leading-none">Read
                                 Article</a>
                         </div>
