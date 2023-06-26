@@ -233,7 +233,7 @@
                     document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
                     document.querySelector('.label').innerHTML = `${data.labels[0].toUpperCase()}`;
-                    document.querySelector('.content-topic').innerHTML = `${data.title.toUpperCase()}`;
+                    document.querySelector('.content-topic').innerHTML = `${data.title.toUpperCase().split(' ').slice(0, 2).join(' ')}...`;
                     document.querySelector('.blog-content').innerHTML = data.content;
                 });
         }
