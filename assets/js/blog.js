@@ -92,7 +92,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
         topPicksItems.forEach(item => {
             populateTopPicksElement.innerHTML += `<div class="mb-5 px-5 md:px-0">
         <h2 class="text-xl font-bold mb-1" id="title">${item.title}</h2>
-        <p class="text-gray-700 mb-3  truncate" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
+        <p class="text-gray-700 mb-3 truncate" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
             <p class="flex items-center justify-between mb-1"><span class="text-sm font-bold italic">Adenaike Idris</span><small class="text-sm text-gray-600" id="published">${item.published.split('T')[0]}</small></p>
         <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn mt-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none" id="url">Read
             Article</a>

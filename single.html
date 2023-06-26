@@ -107,7 +107,7 @@
                 <div
                     class="flex align-center justify-between w-11/12 h-max mb-4 mt-0 p-4 mx-4 bg-white tx-diamond text-sm tx-sm">
                     <span><i class="fa fa-pen px-2"></i><span class="published"></span></span>
-                    <span class="font-light tx-lg"><i class="fa fa-home px-2"></i>/ BLOG / <span class="label"></span>
+                    <span class="font-light tx-lg"><i class="fa fa-home px-2"></i>/BLOG/<span class="label"></span>/ <span class="content-topic truncate w-full text-ellipsis"></span>
                     </span>
                     <span class="italic">
                         <i class="fa fa-user px-2"></i>Adenaike Idris
@@ -120,10 +120,6 @@
         <!-- Main section -->
         <main class="relative flex flex-wrap h-full bg-white">
             <div class="blog-content bg-white w-11/12 h-max my-10 p-4 mx-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quidem adipisci magni,
-                voluptas explicabo minus quasi, voluptatibus laborum temporibus cum quam sunt fuga, nam optio
-                molestias. Doloribus alias, ut sapiente perspiciatis eius minima. Eos animi maiores culpa
-                placeat?
             </div>
         </main>
         <button id="scrollToTopBtn"
@@ -236,7 +232,8 @@
                     document.querySelector('#title-h').innerHTML = data.title;
                     document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
-                    document.querySelector('.label').innerHTML = data.labels;
+                    document.querySelector('.label').innerHTML = `${data.labels[0].toUpperCase()}`;
+                    document.querySelector('.content-topic').innerHTML = `${data.title.toUpperCase()}`;
                     document.querySelector('.blog-content').innerHTML = data.content;
                 });
         }
