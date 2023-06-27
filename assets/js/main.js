@@ -29,16 +29,6 @@ function toggleMenu() {
     }
 }
 
-var typed = new Type('#typed', {
-    stringsElement: '#typed-strings',
-    loop: true,
-    backDelay: 900,
-    backSpeed: 30,
-    smartBackspace: true,
-    typeSpeed: 40,
-    startDelay: 2000,
-});
-
 let progressBarList = document.querySelectorAll(".circular-progress");
 let valueContainerList = document.querySelectorAll(".value-container");
 
@@ -217,12 +207,20 @@ function scrollFunction() {
     }
 }
 
-// Blog section
-
-
 scrollToTopBtn.addEventListener("click", () => {
     document.documentElement.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+});
+
+
+var typed = new Type('#typed', {
+  stringsElement: '#typed-strings',
+  loop: true,
+  backDelay: 900,
+  backSpeed: 30,
+  smartBackspace: true,
+  typeSpeed: 40,
+  startDelay: 2000,
 });
