@@ -240,7 +240,7 @@
                     document.querySelector('.blog-content').innerHTML = data.content;
                     // console.log(document.querySelector('.blog-content').innerHTML);
                     let headerImg = document.querySelector('#headerImg');
-                    headerImg.style.backgroundImage = `linear-gradient(180deg, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.6) 40%), url('${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}')`;
+                    headerImg.style.backgroundImage = `linear-gradient(180deg, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.7) 40%), url('${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}')`;
                     // headerImg.src = `${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}`;
                 });
         }
