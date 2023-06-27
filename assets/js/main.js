@@ -29,7 +29,7 @@ function toggleMenu() {
     }
 }
 
-var typed = new Typed('#typed', {
+var typed = new Type('#typed', {
     stringsElement: '#typed-strings',
     loop: true,
     backDelay: 900,
