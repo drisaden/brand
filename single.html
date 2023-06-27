@@ -105,14 +105,15 @@
                     </div>
                 </div>
                 <div
-                    class=" w-11/12 h-max mb-4 mt-0 p-4 mx-4 bg-white tx-diamond tx-sm">
+                    class="w-full md:w-11/12 h-max mb-4 mt-0 p-4 bg-white tx-diamond tx-sm">
                  
-                    <span class="mb-4 font-light text-sm tx-xl"><i class="fa fa-home px-2"></i>/BLOG/<span class="label"></span>/ <span class="content-topic"></span>
+                    <span class="md:hidden mb-4 font-light text-sm tx-xl"><i class="fa fa-home px-2"></i>/BLOG/<span class="label"></span>/ <span class="content-topic"></span>
                     </span> 
-                   <div class="flex align-center justify-between">
-                    <span class="text-xl"><i class="fa fa-pen px-2"></i><span class="published"></span></span>
-                   
-                    <span class="italic text-xl">
+                   <div class="flex items-center justify-between">
+                    <span class="text-base"><i class="fa fa-pen px-2"></i><span class="published"></span></span>
+                    <span class="hidden md:block font-light text-xl tx-xl"><i class="fa fa-home px-2"></i>/BLOG/<span class="d-label"></span>/ <span class="d-content-topic"></span>
+                </span> 
+                    <span class="italic text-base">
                         <i class="fa fa-user px-2"></i>Adenaike Idris
                     </span>
                     </div>
@@ -238,6 +239,8 @@
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
                     document.querySelector('.label').innerHTML = `${data.labels[0].toUpperCase()}`;
                     document.querySelector('.content-topic').innerHTML = `${data.title.toUpperCase().split(' ').slice(0, 6).join(' ')}...`;
+                    document.querySelector('.d-label').innerHTML = `${data.labels[0].toUpperCase()}`;
+                    document.querySelector('.d-content-topic').innerHTML = `${data.title.toUpperCase().split(' ').slice(0, 6).join(' ')}...`;
                     document.querySelector('.blog-content').innerHTML = data.content;
                 });
         }
