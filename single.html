@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="Web design, programming, Sales funnel, nascent creator, landing page, Wordpress, web development">
     <meta name="author" content="Drisaden: The Marketing Jewel">
-    <title>Drisaden||The Marketing Jewel</title>
+    <title id="title-h"></title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -223,9 +223,7 @@
             fetch(`https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts/${blogID}?key=AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY`)
                 .then(res => res.json())
                 .then((data) => {
-                    // console.log(data)
-                    let headerImg = document.querySelector('#headerImg')
-                    headerImg.src = `${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}`;
+                    console.log(data)
                     document.querySelector('#title-h').innerHTML = data.title;
                     document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
@@ -234,6 +232,9 @@
                     document.querySelector('.d-label').innerHTML = `${data.labels[0].toUpperCase()}`;
                     document.querySelector('.d-content-topic').innerHTML = `${data.title.toUpperCase().split(' ').slice(0, 6).join(' ')}...`;
                     document.querySelector('.blog-content').innerHTML = data.content;
+                    console.log(document.querySelector('.blog-content').innerHTML);
+                    let headerImg = document.querySelector('#headerImg');
+                    headerImg.style.backgroundImage = `url('${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}')`;
                 });
         }
         setTimeout(showPage, 10);
