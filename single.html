@@ -33,7 +33,7 @@
     <div class="relative">
         <!-- Main content HTML goes here -->
         <!-- Header section -->
-        <header class="bg-gray-700 bg-cover bg-center" style="background-image: url('./assets/images/lg-bg.png');">
+        <header class="bg-gray-700 bg-cover bg-center" style="background-image: url('./assets/images/lg-bg.png');" id="headerImg">
             <nav class="bg-transparent pt-10">
                 <div class="mx-auto px-4">
                     <div class="flex justify-between">
@@ -44,8 +44,7 @@
                             font-weight: 600;">DRISADEN</span>
                             </a>
                         </div>
-                        <div
-                            class="text-white hidden md:flex items-center md:justify-center mx-auto lg:w-full lg:pl-48 space-x-1">
+                        <div class="text-white hidden md:flex items-center md:justify-center mx-auto lg:w-full lg:pl-48 space-x-1">
                             <div
                                 class="text-white hidden md:flex items-center md:justify-center mx-auto lg:w-full lg:pl-48 space-x-1">
                                 <a href="./index.html"
@@ -63,13 +62,6 @@
                             </div>
                         </div>
                         <div class="md:hidden flex items-center">
-                            <!-- <button type="button" class="text-gray-500 hover:text-white focus:outline-none focus:text-white"
-                            aria-label="toggle menu" onclick="toggleMenu()">
-                            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" />
-                            </svg>
-                        </button> -->
                             <button type="button"
                                 class="cursor-pointer text-gray-500 hover:text-white focus:outline-none focus:text-white"
                                 aria-label="toggle menu" onclick="toggleMenu()">
@@ -127,8 +119,7 @@
             <div class="blog-content bg-white w-11/12 h-max my-10 p-4 mx-4">
             </div>
         </main>
-        <button id="scrollToTopBtn"
-            class="hidden fixed bottom-4 right-4 bg-diamond btn-hover text-white h-16 w-16 flex justify-center items-center rounded-full border border-blue-500 shadow-lg transition duration-500 ease-in-out">
+        <button id="scrollToTopBtn" class="hidden fixed bottom-4 right-4 bg-diamond btn-hover text-white h-16 w-16 flex justify-center items-center rounded-full border border-blue-500 shadow-lg transition duration-500 ease-in-out">
             <i class="fas fa-arrow-up"></i>
         </button>
 
@@ -222,7 +213,6 @@
                 <p class="text-sm">&copy; 2023 The Marketing Jewel. All rights reserved.</p>
             </div>
         </footer>
-    </div>
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -234,6 +224,8 @@
                 .then(res => res.json())
                 .then((data) => {
                     // console.log(data)
+                    let headerImg = document.querySelector('#headerImg')
+                    headerImg.src = `${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}`;
                     document.querySelector('#title-h').innerHTML = data.title;
                     document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
