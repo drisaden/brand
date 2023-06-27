@@ -29,6 +29,16 @@ function toggleMenu() {
     }
 }
 
+var typed = new Typed('#typed', {
+  stringsElement: '#typed-strings',
+  loop: true,
+  backDelay: 900,
+  backSpeed: 30,
+  smartBackspace: true,
+  typeSpeed: 40,
+  startDelay: 2000,
+});
+
 let progressBarList = document.querySelectorAll(".circular-progress");
 let valueContainerList = document.querySelectorAll(".value-container");
 
@@ -215,12 +225,4 @@ scrollToTopBtn.addEventListener("click", () => {
 });
 
 
-var typed = new Type('#typed', {
-  stringsElement: '#typed-strings',
-  loop: true,
-  backDelay: 900,
-  backSpeed: 30,
-  smartBackspace: true,
-  typeSpeed: 40,
-  startDelay: 2000,
-});
+
