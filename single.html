@@ -32,7 +32,13 @@
 </head>
 
 <body>
-    <header class="bg-gray-700 bg-cover bg-center" id="headerImg">
+    <!-- <header class="bg-gray-700 bg-cover bg-center" id="headerImg">
+    <div class="h-full bg-black z-10"></div> -->
+    <header class="relative bg-cover bg-center bg-gradient-to-b from-transparent to-black transition-all duration-300 opacity-90" id="headerImg">
+        <!-- <img src="" alt="" class="relative w-full h-full object-cover" id="headerImg">
+         <div class="overlay absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black transition-all duration-300"> -->
+        <!-- <div class="p-4 flex justify-between items-center mb-2">
+    <div class="h-full bg-black z-10"></div> -->
         <nav class="bg-transparent pt-10">
             <div class="mx-auto px-4">
                 <div class="flex justify-between">
@@ -223,7 +229,7 @@
             fetch(`https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts/${blogID}?key=AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY`)
                 .then(res => res.json())
                 .then((data) => {
-                    console.log(data)
+                    // console.log(data)
                     document.querySelector('#title-h').innerHTML = data.title;
                     document.querySelector('#title').innerHTML = data.title;
                     document.querySelector('.published').innerHTML = data.published.split('T')[0];
@@ -232,9 +238,10 @@
                     document.querySelector('.d-label').innerHTML = `${data.labels[0].toUpperCase()}`;
                     document.querySelector('.d-content-topic').innerHTML = `${data.title.toUpperCase().split(' ').slice(0, 6).join(' ')}...`;
                     document.querySelector('.blog-content').innerHTML = data.content;
-                    console.log(document.querySelector('.blog-content').innerHTML);
+                    // console.log(document.querySelector('.blog-content').innerHTML);
                     let headerImg = document.querySelector('#headerImg');
                     headerImg.style.backgroundImage = `url('${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}')`;
+                    // headerImg.src = `${data.content.match(/<img[^>]*src="([^"]*)"/)?.[1]}`;
                 });
         }
         setTimeout(showPage, 10);
