@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="description"
+        content="I help businesses build responsive and functional website using modern tools and innovations- Check my Portfolio out">
+    <meta name="keywords"
+        content="Web design, programming, Sales funnel, nascent creator, landing page, Wordpress, web development">
+    <meta name="author" content="Drisaden: The Marketing Jewel">
+    <title>Drisaden||The Marketing Jewel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"
+        integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@2.52.0/dist/full.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/images/myimage.webp">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Nav section -->
+    <nav class="bg-diamond">
+        <div class="mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex">
+                    <a href="#" class="flex items-center py-4 px-2">
+                        <!-- <img src="" alt="logo"> -->
+                        <span class="text-white text-lg tx-lg mx-2 font-semibold" style="font-family: 'Montserrat', sans-serif;
+                        font-weight: 600;">DRISADEN</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center md:justify-center mx-auto lg:w-full lg:pl-48 space-x-1">
+                    <a href="./index.html" class="py-4 px-2 text-white font-semibold hover:text-gray-300">Home</a>
+                    <a href="./blog.html" class="py-4 px-2 text-white font-semibold hover:text-gray-300">Blog</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBW8peSoZOhmojarMQFOwwZpj-tUlFtez0_B90i52SIkHneQ/viewform"
+                        class="py-4 px-2 text-white font-semibold hover:text-gray-300">Book Call</a>
+                    <a href="./portfolio" class="py-4 px-2 text-white font-semibold hover:text-gray-300">Portfolio</a>
+                    <a href="./pricing" class="py-4 px-2 text-white font-semibold hover:text-gray-300">Pricing</a>
+                    <a href="./tutorials.html"
+                        class="py-4 px-2 text-white font-semibold hover:text-gray-300">Tutorials</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <!-- <button type="button" class="text-gray-500 hover:text-white focus:outline-none focus:text-white"
+                        aria-label="toggle menu" onclick="toggleMenu()">
+                        <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" />
+                        </svg>
+                    </button> -->
+                    <button type="button"
+                        class="cursor-pointer text-gray-500 hover:text-white focus:outline-none focus:text-white"
+                        aria-label="toggle menu" onclick="toggleMenu()">
+                        <div class="container" onclick="myFunction(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="./index.html" class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Home</a>
+            <a href="./blog.html" class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Blog</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBW8peSoZOhmojarMQFOwwZpj-tUlFtez0_B90i52SIkHneQ/viewform"
+                class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Book Call</a>
+            <a href="./portfolio" class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Portfolio</a>
+            <a href="./pricing" class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Pricing</a>
+            <a href="./tutorials.html" class="block py-2 px-4 tx-sm text-white font-semibold hover:bg-gray-900">Tutorial
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header section -->
+    <header class="relative bg-gray-700 bg-cover bg-center h-56" style="background-image: url('./assets/images/lg-bg.png');">
+        <div class="flex justify-center mx-auto items-center h-full px-6 md:px-16 lg:px-24 xl:px-32">
+            <div class="text-white">
+                <div class="hidden" id="typed-strings">
+                    <p>Interpretation and Definitions</p>
+                    <p>Types of Data Collected</p>
+                    <p>Use of Your Personal Data</p>
+                    <p>Retention of Your Personal Data</p>
+                    <p>Transfer of Your Personal Data</p>
+                    <p>Disclosure of Your Personal Data</p>
+                    <p>Security of Your Personal Data</p>
+                    <p>Children’s Privacy</p>
+                </div>
+                <div
+                    class="mt-10 text-5xl md:text-6xl lg:text-7xl">
+                    <h1 class="inline-block leading-none font-black"
+                        style="font-family: 'Montserrat', sans-serif; font-weight: 900;">PRICING
+                    </h1>
+                </div>
+                <span class="leading-none font-bold text-xl md:text-xl lg:text-2xl" id="typed"
+                    style="font-family: 'Montserrat', sans-serif;"></span>
+                
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main section -->
+    <main class="flex flex-wrap">
+        <article class="w-full md:w-3/4 lg:w-3/4 md:p-4 p-0 mx-auto">
+
+            <!-- Contact section -->
+            <section class="w-full bg-gray-100 my-4" id="contactme">
+                <div class="w-full h-full flex flex-row justify-center items-center">
+                    <div class="w-full py-10 px-4">
+                        <div class="text-center text-2xl tx-2xl font-bold">Hire Me</div>
+                        <div class="bar mx-auto h-1 w-28 bg-diamond-3 mt-2 mb-10 relative rounded-full"></div>
+                        <div>
+                            <p class="text-base tx-base tx-base mt-5">
+                                Are you looking to hire a professional web developer with years of experience? Look no
+                                further! I specialize in HTML, CSS, and have great experience in JavaScript and React.
+                            </p>
+                            <p class="text-base tx-base tx-base mt-5">
+                                With my expertise in various web frameworks such as Bootstrap, Tailwind, and Bulma, I
+                                can
+                                develop
+                                responsive and user-friendly websites. Additionally, I am familiar with various versions
+                                of
+                                third-party website builders such as <a href="https://wordpress.com" target="_blank"
+                                    rel="noopener" title="Wordpress" class="tx-diamond font-bold">Wordpress</a>, <a
+                                    href="https://carrd.co" target="_blank" rel="noopener" title="Carrd"
+                                    class="tx-diamond font-bold">Carrd.co</a> and <a href="https://systeme.io"
+                                    target="_blank" rel="noopener" title="Systeme"
+                                    class="tx-diamond font-bold">Systeme.io</a> .
+                            </p>
+                            <p class="text-base tx-base tx-base mt-5">
+                                I am also well-versed in using version control systems such as Git and GitHub, ensuring
+                                that
+                                your
+                                code is always well-maintained and up-to-date.
+                            </p>
+                            <p class="text-base tx-base tx-base mt-5">
+                                If you're ready to take your next project to the next level? Let's work together!
+                                Contact me
+                                through
+                                one of the following options:
+                            </p>
+                        </div>
+
+                        <div class="w-full flex-shrink-0 w-full md:flex-shrink md:flex-shrink-0 md:w-auto">
+                            <div id="contact"
+                                class="w-full md:mx-auto md:w-2/4 box-2 bg-white max-w-full py-10 px-5 border border-gray-400 rounded-lg mt-16 mr-5 mb-10 shadow-md h-500">
+                                <form action="#" id="hire-form">
+                                    <div class="w-full">
+                                        <div class="user-input relative w-full mb-4">
+                                            <br />
+                                            <input type="text" id="name" name="name"
+                                                class="itext py-2 px-4 w-full outline-none text-base tx-base tx-base border border-gray-300 shadow rounded-lg text-blue-800"
+                                                required />
+                                            <span
+                                                class="mt-3  ilabel text-lg tx-lg font-semibold text-black tracking-wider flabel absolute top-2/4 left-5 transform -translate-y-1/2 pointer-events-none transition-all duration-200">Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="user-input relative w-full mb-8">
+                                            <br />
+                                            <input type="email" id="email" name="email"
+                                                class="itext py-2 px-4 w-full outline-none text-base tx-base tx-base border border-gray-300 shadow rounded-lg text-blue-800"
+                                                required />
+                                            <span
+                                                class="mt-3 ilabel text-lg tx-lg font-semibold text-black tracking-wider flabel absolute top-2/4 left-5 transform -translate-y-1/2 pointer-events-none transition-all duration-200">Email</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <select id="" style="font-size: 1.125rem; font-family: 'Montserrat', sans-serif;
+                                        font-weight: 500;"
+                                            class="slabel py-2 px-4 w-full outline-none border border-gray-300 shadow rounded-lg ilabel text-lg tx-lg font-semibold text-black tracking-wider">
+                                            <option value="">Priority</option>
+                                            <option value="">Personal</option>
+                                            <option value="">Business</option>
+                                            <option value="">Coaching</option>
+                                            <option value="">Report</option>
+                                            <option value="">Feedback</option>
+                                            <option value="">Suggestion</option>
+                                            <option value="">Others</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="user-input relative w-full my-4">
+                                            <br />
+                                            <textarea id="message" name="message"
+                                                class="slabel py-2 px-6 w-full outline-none text-base tx-base tx-base border border-gray-300 shadow rounded-md tx-diamond  textarea h-36 text-dark resize-none"
+                                                placeholder="">Hi, Drisaden. I want to secure a deal with you for [your priority here] purposes. Kindly get back to ASAP. Thanks</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" id="submit-btn"
+                                        class="font-bold py-2 px-4 rounded-md transition duration-300 border border-blue-500 tx-diamond-2 btn-hover focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-lg tx-lg">Send
+                                        Message</button>
+                                </form>
+                                <div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden"
+                                    id="modal">
+                                    <div class="bg-white p-8 rounded-md shadow-md mx-10">
+                                        <h2 class="text-2xl tx-2xl font-bold mb-4 ">Your message has sent successfully!
+                                        </h2>
+                                        <p class="mb-4 text-base tx-base tx-base">Kindly check your mailbox for my
+                                            response. You can
+                                            click
+                                            the button below to book a call with me directly. Thanks</p>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBW8peSoZOhmojarMQFOwwZpj-tUlFtez0_B90i52SIkHneQ/viewform"
+                                            target="_blank"
+                                            class="bg-blue-500 btn-hover text-white font-bold py-2 px-4 rounded text-lg tx-lg">
+                                            Book Call
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <button id="scrollToTopBtn"
+        class="hidden fixed bottom-4 right-4 bg-diamond btn-hover text-white h-16 w-16 flex justify-center items-center rounded-full border border-blue-500 shadow-lg transition duration-500 ease-in-out">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer section -->
+    <footer class="bg-diamond text-white">
+        <div class="container mx-auto px-4 lg:px-10 py-12 flex flex-wrap justify-between">
+
+            <!-- Personal Info -->
+            <div class="w-full md:w-1/2 lg:w-1/4 mb-6">
+                <h3 class="text-xl font-bold mb-4">Personal Info</h3>
+                <!-- <p class="tx-sm mt-10">Personal Address:</p> -->
+                <a href="https://www.google.com/maps/search/?api=1&query=RMW2%2BQRC+Sagamu" target="_blank">
+                    <p class="my-4"><i class="fas fa-home mr-2"></i> 17b, Araromi street, Baruwa</p>
+                    <p class="my-4"><i class="fas fa-map-marker-alt mr-2"></i> Sagamu, Ogun State, Nigeria</p>
+                </a>
+                <p class="my-4"><i class="fas fa-phone mr-2"></i><a class="text-blue-500" href="tel:+2349036371010">
+                        (+234) 903 637 (Click to call)</a></p>
+            </div>
+
+            <!-- Nav link -->
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6">
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul>
+                    <li class="my-3"><a href="./index.html" class="link-btn inline-block relative leading-none">Home</a>
+                    </li>
+                    <li class="my-3"><a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSfBW8peSoZOhmojarMQFOwwZpj-tUlFtez0_B90i52SIkHneQ/viewform"
+                            class="link-btn inline-block relative leading-none">Book A Call</a></li>
+                    <li class="my-3"><a href="./portfolio"
+                            class="link-btn inline-block relative leading-none">Portfolio</a></li>
+                    <li class="my-3"><a href="./privacy_policy.html" class="link-btn inline-block relative leading-none"
+                            target="_blank" rel="noopener">Privacy Policy</a></li>
+                    <li class="my-3"><a href="./terms_of_services.html"
+                            class="link-btn inline-block relative leading-none" target="_blank" rel="noopener">Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="w-full md:w-1/2 lg:w-1/4 mb-6">
+                <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                <p class="text-base tx-base tx-base">Sign up for my newsletter and stay up to date with my latest news
+                    and events.</p>
+                <form class="mt-4">
+                    <div class="flex flex-wrap items-center">
+                        <!-- <input type="email" placeholder="Enter your email" class="w-full text-gray-700 px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300"> -->
+                        <!-- <button type="submit"
+                            class="mt-4 font-bold py-2 px-4 rounded-md transition duration-300 border border-white text-white btn-hover focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-lg tx-lg">
+                            Subscribe
+                        </button> -->
+                    </div>
+                    <script async data-uid="068724265b" src="https://drisaden.ck.page/068724265b/index.js"></script>
+                </form>
+            </div>
+
+            <!-- Social icons -->
+            <div class="w-full md:w-1/2 lg:w-1/4 mb-6 lg:mx-auto">
+                <h3 class="text-xl font-bold mb-4">Follow me on These Platforms</h3>
+                <div class="flex justify-between">
+                    <a href="https://twitter.com/adenaike_idris" class="text-white hover:text-blue-400" target="_blank"
+                        rel="noopener" title="Twitter">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://m.facebook.com/aden.edriiz/" class="text-white hover:text-blue-600" target="_blank"
+                        rel="noopener" title="Facebook">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://wa.me/2349036371010?text=Hi,%20I%20want%20to%20know%20more%20about%20you.%20and%20also%20learn%20from%20you.%20Can%20I%20connect%20with%20you?"
+                        class="text-white hover:text-green-500" target="_blank" rel="noopener" title="WhatsApp">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                    <a href="https://instagram.com/adenaike_idris" class="text-white hover:text-pink-600"
+                        target="_blank" rel="noopener" title="Instagram">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adenaikeidris/" class="text-white hover:text-blue-600"
+                        target="_blank" rel="noopener" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/drisaden" class="text-white hover:text-gray-600" target="_blank"
+                        rel="noopener" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                    <a href="https://t.me/dris_Jewel" class="text-white hover:text-blue-400" target="_blank"
+                        rel="noopener" title="Telegram"><i class="fab fa-telegram fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 pb-4">
+            <p class="text-sm">&copy; 2023 The Marketing Jewel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/scroll.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 200,
+            duration: 1300,
+            delay: 400,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
