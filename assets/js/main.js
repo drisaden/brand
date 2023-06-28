@@ -203,7 +203,7 @@ modal.addEventListener('click', (e) => {
     }
 });
 
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+let scrollToTopBtn = document.querySelector("#scrollToTopBtn");
 const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
 window.onscroll = function () { scrollFunction() };
@@ -223,6 +223,3 @@ scrollToTopBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
-
-
-

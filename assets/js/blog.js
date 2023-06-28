@@ -29,7 +29,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
             <span class="absolute left-0 bottom-0 bg-black text-white py-1 px-3 tx-sm" id="labels">${item.labels}</span>
             <img src="${src}" alt="Image 1"  class="w-full h-64 object-cover mb-4">
             </div>
-            <h2 class="text-xl font-bold mb-2" id="title">${item.title}</h2>
+            <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><h2 class="text-xl font-bold mb-2" id="title">${item.title}</h2></a>
             <p class="flex items-center justify-between mb-4"><span class="text-base"><small class="font-bold mr-2 italic">By Adenaike Idris</small><small class="text-gray-600" id="published">${item.published.split('T')[0]}</small></span>
                 <span class="flex items-center">
                             <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor"
@@ -91,7 +91,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
 
         topPicksItems.forEach(item => {
             populateTopPicksElement.innerHTML += `<div class="mb-5 px-5 md:px-0">
-        <h2 class="text-xl font-bold mb-1" id="title">${item.title}</h2>
+        <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><h2 class="text-xl font-bold mb-1" id="title">${item.title}</h2></a>
         <p class="text-gray-700 mb-3 truncate" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
             <p class="flex items-center justify-between mb-1"><span class="text-sm font-bold italic">Adenaike Idris</span><small class="text-sm text-gray-600" id="published">${item.published.split('T')[0]}</small></p>
         <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn mt-3 inline-block  tx-diamond-2   font-bold md:font-medium relative leading-none" id="url">Read
@@ -112,7 +112,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                         <span class="absolute left-0 bottom-0 bg-black text-white py-1 px-3 tx-sm">${item.labels}</span>
                         <img src="${src}" alt="${altText}" class="w-full h-48 object-cover mb-4">
                     </div>
-                    <h2 class="text-xl font-bold mb-2">${item.title}</h2>
+                    <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><h2 class="text-xl font-bold mb-2">${item.title}</h2></a>
                     <p class="flex items-center justify-between mb-4"><span class="text-base"><small
                                 class="font-bold mr-2 italic">By Adenaike Idris</small><small
                                 class="text-gray-600">${item.published.split('T')[0]}</small></span>
@@ -164,7 +164,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
 
             populateBusinessElement.innerHTML += `<div class="border-b border-gray-400 mx-4"></div>
                 <div class="p-4 bg-white">
-                    <h2 class="text-xl font-bold mb-2">${item.title}</h2>
+                   <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"> <h2 class="text-xl font-bold mb-2">${item.title}</h2></a>
                     <p class="text-gray-700 mb-4">${item.content.replace(/<\/?[^>]+(>|$)/g, "").trim().substr(0, 120)}...</p>
                     <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank" class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative  leading-none">Read
                         Article</a>
@@ -180,7 +180,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
             <span class="absolute left-0 bottom-0 bg-black text-white py-1 px-3 tx-sm" id="labels">${item.labels}</span>
             <img src="${src}" alt="Image 1"  class="w-full h-72 object-cover mb-4">
             </div>
-                    <h2 class="text-xl font-bold mb-2">${item.title}</h2>
+                    <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><h2 class="text-xl font-bold mb-2">${item.title}</h2></a>
                     <p class="flex items-center justify-between mb-4"><span class="text-base"><small
                                 class="font-bold mr-2 italic">By Adenaike Idris</small><small
                                 class="text-gray-600">${item.published.split('T')[0]}</small></span>
@@ -257,7 +257,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                                 alt="${altText}">
                         </div>
                         <div class="w-full md:w-2/5 px-4 bg-white">
-                            <h2 class="text-xl font-bold mb-2">${item.title}</h2>
+                            <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"><h2 class="text-xl font-bold mb-2">${item.title}</h2></a>
                             <p class="text-gray-700 mb-4">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>
                             <a href="https://adenaikeidris.com.ng/single.html?id=${item.id}" target="_blank"
                                 class="link-btn my-3 inline-block  tx-diamond-2   font-bold md:font-medium relative  leading-none">Read
