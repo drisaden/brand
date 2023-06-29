@@ -193,6 +193,11 @@ width: 100%;
 color: #6FABD0;
 }
 
+.tx-mont{
+  font-family: 'Montserrat', sans-serif;
+line-height: 1;
+}
+
 .tx-base {
 font-family: 'Montserrat', sans-serif;
 font-weight: 400;
