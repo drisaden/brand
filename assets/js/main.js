@@ -203,4 +203,19 @@ modal.addEventListener('click', (e) => {
     }
 });
 
+        function toggleShow(targetId) {
+            var target = document.getElementById(targetId);
+            var accordionIcon = target.previousElementSibling.querySelector('[data-accordion-icon]');
+
+            if (target.classList.contains("hidden")) {
+                target.classList.remove("hidden");
+                accordionIcon.classList.remove('fa-caret-down');
+    accordionIcon.classList.add('fa-caret-up');
+            } else {
+                target.classList.add("hidden");
+                accordionIcon.classList.remove('fa-caret-up');
+    accordionIcon.classList.add('fa-caret-down');
+            }
+        }
+
 
