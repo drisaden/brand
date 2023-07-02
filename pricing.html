@@ -150,7 +150,7 @@
                   </span>
                 </h2>
               </div>
-              <div id="accordion-collapse-body-1" class="hidden w-full mt-5">
+              <div id="accordion-collapse-body-1" class="accordion-body hidden w-full mt-5">
                 <div class="w-full">
                   <div class="flex justify-between items-center">
                     <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>1 yr Free hosting</p>
@@ -165,7 +165,11 @@
                     <span class="inline-block text-base py-1">$20</span>
                   </div>
                   <div class="flex justify-between items-center">
-                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Professional design</p>
+                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Custom design</p>
+                    <span class="inline-block text-base py-1">$80</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Responsive layout</p>
                     <span class="inline-block text-base py-1">$30</span>
                   </div>
                 </div>
@@ -192,7 +196,7 @@
                   </span>
                 </h2>
               </div>
-              <div id="accordion-collapse-body-2" class="w-full mt-5">
+              <div id="accordion-collapse-body-2" class="accordion-body hidden w-full mt-5">
                 <div class="w-full">
                   <div class="flex justify-between items-center">
                     <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>1 yr Free hosting</p>
@@ -207,13 +211,18 @@
                     <span class="inline-block text-base py-1">$20</span>
                   </div>
                   <div class="flex justify-between items-center">
-                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Professional design</p>
+                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Custom design</p>
+                    <span class="inline-block text-base py-1">$80</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Responsive layout</p>
                     <span class="inline-block text-base py-1">$30</span>
                   </div>
                 </div>
               </div>
             </div>
-        </div>
+          </div>
+          
           
         <!-- <div class="w-full md:w-3/4 lg:w-3/4 md:p-4 p-0 mx-auto"> -->
         <div class="w-full md:p-4 p-0 mx-auto">
@@ -655,25 +664,67 @@
 
     
     <script>
-        // Get all the accordion headings and bodies
+// Get all the accordion headings
 const accordionHeadings = document.querySelectorAll('[data-accordion-target]');
-const accordionBodies = document.querySelectorAll('[id^="accordion-collapse-body"]');
 
-// Add click event listeners to each accordion heading
+// Add event listener to each accordion heading
 accordionHeadings.forEach((heading) => {
-  heading.addEventListener('click', () => {
-    const target = heading.getAttribute('data-accordion-target');
-    const body = document.querySelector(target);
-
-    // Toggle the visibility of the accordion body
-    body.classList.toggle('hidden');
-
-    // Toggle the accordion icon
-    const accordionIcon = heading.querySelector('[data-accordion-icon]');
-    accordionIcon.classList.toggle('fa-caret-down');
-    accordionIcon.classList.toggle('fa-caret-up');
-  });
+  heading.addEventListener('click', toggleAccordion);
 });
+
+// Function to toggle the accordion
+function toggleAccordion() {
+  const target = this.getAttribute('data-accordion-target');
+  const accordionBody = document.querySelector(target);
+
+  // Check if the accordion body is currently visible
+  const isExpanded = accordionBody.classList.contains('hidden');
+
+  // Close all accordion bodies
+  closeAllAccordionBodies();
+
+  if (isExpanded) {
+    // Open the clicked accordion body
+    accordionBody.classList.remove('hidden');
+    this.setAttribute('aria-expanded', 'true');
+  } else {
+    // Close the clicked accordion body
+    accordionBody.classList.add('hidden');
+    this.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Function to close all accordion bodies
+function closeAllAccordionBodies() {
+  const accordionBodies = document.querySelectorAll('.accordion-body');
+
+  accordionBodies.forEach((body) => {
+    body.classList.add('hidden');
+    const accordionHeading = document.querySelector(`[data-accordion-target="#${body.id}"]`);
+    accordionHeading.setAttribute('aria-expanded', 'false');
+  });
+}
+
+
+//         // Get all the accordion headings and bodies
+// const accordionHeadings = document.querySelectorAll('[data-accordion-target]');
+// const accordionBodies = document.querySelectorAll('[id^="accordion-collapse-body"]');
+
+// // Add click event listeners to each accordion heading
+// accordionHeadings.forEach((heading) => {
+//   heading.addEventListener('click', () => {
+//     const target = heading.getAttribute('data-accordion-target');
+//     const body = document.querySelector(target);
+
+//     // Toggle the visibility of the accordion body
+//     body.classList.toggle('hidden');
+
+//     // Toggle the accordion icon
+//     const accordionIcon = heading.querySelector('[data-accordion-icon]');
+//     accordionIcon.classList.toggle('fa-caret-down');
+//     accordionIcon.classList.toggle('fa-caret-up');
+//   });
+// });
 
     </script>
     <script src="./assets/js/scroll.js"></script>
