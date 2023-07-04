@@ -773,14 +773,14 @@ function updateAmounts() {
       for (var i = 0; i < currentAmounts.length; i++) {
         var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
         var updatedAmount = amount * 750;
-        currentAmounts[i].innerHTML = '₦‎' + updatedAmount;
+        currentAmounts[i].innerHTML = '₦' + updatedAmount;
       }
 
       var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
       for (var j = 0; j < breakdownAmounts.length; j++) {
         var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
         var updatedBreakdownAmount = breakdownAmount * 750;
-        breakdownAmounts[j].innerHTML = '₦‎' + updatedBreakdownAmount;
+        breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
       }
     }
   });
