@@ -129,6 +129,7 @@
   <option value="USD">USD</option>
   <option value="NAIRA">NAIRA</option>
 </select>
+
     <!-- Main section -->
     <main class="flex flex-wrap">
 
@@ -576,10 +577,10 @@
         </div>
         </section>
         
-
-
     </main>
 
+        <!-- web-design section -->
+        
     <button id="scrollToTopBtn"
         class="hidden fixed bottom-4 right-4 bg-diamond btn-hover text-white h-16 w-16 flex justify-center items-center rounded-full border border-blue-500 shadow-lg transition duration-500 ease-in-out">
         <i class="fas fa-arrow-up"></i>
@@ -826,7 +827,8 @@ function convertAmountsToNaira() {
   for (var i = 0; i < currentAmounts.length; i++) {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
     var updatedAmount = amount * 750;
-    currentAmounts[i].innerHTML = '₦' + updatedAmount;
+    var abbreviatedAmount = abbreviateAmount(updatedAmount);
+    currentAmounts[i].innerHTML = '₦' + abbreviatedAmount;
     const dataTarget = currentAmounts[i].getAttribute('data-target');
     
     // Get the corresponding total-amount element using the data-target
@@ -834,7 +836,7 @@ function convertAmountsToNaira() {
     
     // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
     if (totalAmountElement) {
-      totalAmountElement.innerHTML = '₦' + updatedAmount;
+      totalAmountElement.innerHTML = '₦' + abbreviateAmount(updatedAmount);;
     } else {
       console.error(`No element found with ID: ${dataTarget}`);
     }
@@ -844,7 +846,8 @@ function convertAmountsToNaira() {
   for (var j = 0; j < breakdownAmounts.length; j++) {
     var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
     var updatedBreakdownAmount = breakdownAmount * 750;
-    breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
+    breakdownAmounts[j].innerHTML = '₦' + abbreviateAmount(updatedBreakdownAmount);
+
   }
 }
 
@@ -853,7 +856,10 @@ function convertAmountsToUSD() {
   for (var i = 0; i < currentAmounts.length; i++) {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('₦', ''));
     var updatedAmount = amount / 750;
-    currentAmounts[i].innerHTML = '$' + updatedAmount;
+var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100); // Round off to the nearest whole number
+console.log(roundedAmount)
+currentAmounts[i].innerHTML = '$' + roundedAmount;
+
     const dataTarget = currentAmounts[i].getAttribute('data-target');
     
       // Get the corresponding total-amount element using the data-target
@@ -861,7 +867,7 @@ function convertAmountsToUSD() {
     
       // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
       if (totalAmountElement) {
-        totalAmountElement.innerHTML = '$' + updatedAmount;
+        totalAmountElement.innerHTML = '$' + Math.round(((updatedAmount*1000)*100)/100);
       } else {
         console.error(`No element found with ID: ${dataTarget}`);
       }
@@ -871,7 +877,7 @@ function convertAmountsToUSD() {
   for (var j = 0; j < breakdownAmounts.length; j++) {
     var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('₦', ''));
     var updatedBreakdownAmount = breakdownAmount / 750;
-    breakdownAmounts[j].innerHTML = '$' + updatedBreakdownAmount;
+    breakdownAmounts[j].innerHTML = '$' + Math.round(((updatedBreakdownAmount*1000)*100)/100);
   }
 }
 
@@ -888,6 +894,26 @@ function updateAmounts() {
     convertAmountsToUSD();
   }
   
+}
+
+function abbreviateAmount(amount) {
+  var amountString = amount.toString();
+  var integerPart = Math.floor(amount).toString();
+  var length = integerPart.length;
+  var suffix = '';
+
+  if (length <= 3) {
+    return amountString;
+  } else if (integerPart.slice(-3) === '000') {
+    suffix = 'k';
+    integerPart = integerPart.slice(0, -3);
+  } 
+  else {
+    suffix = 'k';
+    integerPart = (amount / 1000).toFixed(0);
+  }
+
+  return integerPart + suffix;
 }
 
 // Call the updateAmounts function when the currency select option changes
