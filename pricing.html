@@ -544,24 +544,24 @@
                         <div class="w-full">
                             <div class="flex justify-between items-center">
                                 <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Hosting plan</p>
-                                <span class="inline-block text-base py-1 breakdown-amount">tbn</span>
+                                <span class="inline-block text-base py-1 br">tbn</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Domain name</p>
-                                <span class="inline-block text-base py-1 breakdown-amount">tbh</span>
+                                <span class="inline-block text-base py-1">tbh</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Design</p>
-                                <span class="inline-block text-base py-1 breakdown-amount">tbn</span>
+                                <span class="inline-block text-base py-1">tbn</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="text-sm tx-mont py-2"><i class="fa fa-check text-green-800 mr-1"></i>Branding</p>
-                                <span class="inline-block text-base py-1 breakdown-amount">tbn</span>
+                                <span class="inline-block text-base py-1">tbn</span>
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="text-sm tx-mont py-2"><i
                                         class="fa fa-check text-green-800 mr-1"></i>Responsive layout</p>
-                                <span class="inline-block text-base py-1 breakdown-amount">tbn</span>
+                                <span class="inline-block text-base py-1">tbn</span>
                             </div>
                             <div class="border-t border-gray-400 mt-3">
                                 <p class="text-sm tx-mont py-2 italic font-bold">**NOTE: tbn means to be negotiated</p>
@@ -759,10 +759,20 @@
 //   console.log("Latitude: " + latitude + ", Longitude: " + longitude);
 // }
 
-// Function to calculate the updated amounts
-function updateAmounts() {
+// Function to check if the updateAmounts function has already been executed
+function hasUpdateAmountsExecuted() {
+  return localStorage.getItem('updateAmountsExecuted') === 'true';
+}
+
+// Function to mark the updateAmounts function as executed
+function markUpdateAmountsExecuted() {
+  localStorage.setItem('updateAmountsExecuted', 'true');
+}
+
+// Check if the updateAmounts function has already been executed
+if (!hasUpdateAmountsExecuted()) {
   // Get the user's current position
-  navigator.geolocation.getCurrentPosition(function(position) {
+  navigator.geolocation.getCurrentPosition(function (position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
@@ -782,12 +792,14 @@ function updateAmounts() {
         var updatedBreakdownAmount = breakdownAmount * 750;
         breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
       }
+
+      // Mark the updateAmounts function as executed
+      markUpdateAmountsExecuted();
     }
   });
 }
 
-// Call the updateAmounts function
-updateAmounts();
+
     </script>
 </body>
 
