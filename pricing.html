@@ -759,27 +759,28 @@
 //   console.log("Latitude: " + latitude + ", Longitude: " + longitude);
 // }
 
+// Function to calculate the updated amounts
 function updateAmounts() {
   // Get the user's current position
   navigator.geolocation.getCurrentPosition(function(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    // Check if the user's location falls within the specified range
-    if (latitude >= 9.081 && latitude <= 9.083 && longitude >= 8.674 && longitude <= 8.676) {
+    // Check if the user's location falls within Nigeria's boundaries
+    if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
       // Calculate the updated amounts by multiplying with 750
       var currentAmounts = document.getElementsByClassName('current-amount');
       for (var i = 0; i < currentAmounts.length; i++) {
         var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
         var updatedAmount = amount * 750;
-        currentAmounts[i].innerHTML = '₦‎' + updatedAmount;
+        currentAmounts[i].innerHTML = '$' + updatedAmount;
       }
 
       var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
       for (var j = 0; j < breakdownAmounts.length; j++) {
         var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
         var updatedBreakdownAmount = breakdownAmount * 750;
-        breakdownAmounts[j].innerHTML = '₦‎'+ updatedBreakdownAmount;
+        breakdownAmounts[j].innerHTML = '$' + updatedBreakdownAmount;
       }
     }
   });
