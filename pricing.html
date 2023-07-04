@@ -125,7 +125,10 @@
           </div>
 
     </header>-->
-
+<select id="currency-select">
+  <option value="USD">USD</option>
+  <option value="NAIRA">NAIRA</option>
+</select>
     <!-- Main section -->
     <main class="flex flex-wrap">
 
@@ -759,46 +762,52 @@
 //   console.log("Latitude: " + latitude + ", Longitude: " + longitude);
 // }
 
-// Function to check if the updateAmounts function has already been executed
-function hasUpdateAmountsExecuted() {
-  return localStorage.getItem('updateAmountsExecuted') === 'true';
+
+
+// Retrieve the selected currency from local storage, if available
+var selectedCurrency = localStorage.getItem('selectedCurrency');
+if (selectedCurrency) {
+  // Set the selected currency in the dropdown
+  document.getElementById('currency-select').value = selectedCurrency;
 }
 
-// Function to mark the updateAmounts function as executed
-function markUpdateAmountsExecuted() {
-  localStorage.setItem('updateAmountsExecuted', 'true');
-}
+function updateAmounts() {
+  // Get the selected currency
+  var selectedCurrency = document.getElementById('currency-select').value;
 
-// Check if the updateAmounts function has already been executed
-if (!hasUpdateAmountsExecuted()) {
-  // Get the user's current position
-  navigator.geolocation.getCurrentPosition(function (position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+  // Store the selected currency in local storage
+  localStorage.setItem('selectedCurrency', selectedCurrency);
 
-    // Check if the user's location falls within Nigeria's boundaries
-    if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
-      // Calculate the updated amounts by multiplying with 750
-      var currentAmounts = document.getElementsByClassName('current-amount');
-      for (var i = 0; i < currentAmounts.length; i++) {
-        var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
-        var updatedAmount = amount * 750;
-        currentAmounts[i].innerHTML = '₦' + updatedAmount;
+  // Check if the selected currency is NAIRA
+  if (selectedCurrency === 'NAIRA') {
+    // Get the user's current position
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      // Check if the user's location falls within Nigeria's boundaries
+      if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
+        // Calculate the updated amounts by multiplying with 750
+        var currentAmounts = document.getElementsByClassName('current-amount');
+        for (var i = 0; i < currentAmounts.length; i++) {
+          var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
+          var updatedAmount = amount * 750;
+          currentAmounts[i].innerHTML = '$' + updatedAmount;
+        }
+
+        var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
+        for (var j = 0; j < breakdownAmounts.length; j++) {
+          var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
+          var updatedBreakdownAmount = breakdownAmount * 750;
+          breakdownAmounts[j].innerHTML = '$' + updatedBreakdownAmount;
+        }
       }
-
-      var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
-      for (var j = 0; j < breakdownAmounts.length; j++) {
-        var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
-        var updatedBreakdownAmount = breakdownAmount * 750;
-        breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
-      }
-
-      // Mark the updateAmounts function as executed
-      markUpdateAmountsExecuted();
-    }
-  });
+    });
+  }
 }
 
+// Call the updateAmounts function when the currency select option changes
+document.getElementById('currency-select').addEventListener('change', updateAmounts);
 
     </script>
 </body>
