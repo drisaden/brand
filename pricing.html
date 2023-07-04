@@ -764,50 +764,60 @@
 
 
 
-// Retrieve the selected currency from local storage, if available
-var selectedCurrency = localStorage.getItem('selectedCurrency');
-if (selectedCurrency) {
-  // Set the selected currency in the dropdown
-  document.getElementById('currency-select').value = selectedCurrency;
-}
+var functionHasRun = localStorage.getItem('functionHasRun');
 
-function updateAmounts() {
-  // Get the selected currency
-  var selectedCurrency = document.getElementById('currency-select').value;
-
-  // Store the selected currency in local storage
-  localStorage.setItem('selectedCurrency', selectedCurrency);
-
-  // Check if the selected currency is NAIRA
-  if (selectedCurrency === 'NAIRA') {
-    // Get the user's current position
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
-
-      // Check if the user's location falls within Nigeria's boundaries
-      if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
-        // Calculate the updated amounts by multiplying with 750
-        var currentAmounts = document.getElementsByClassName('current-amount');
-        for (var i = 0; i < currentAmounts.length; i++) {
-          var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
-          var updatedAmount = amount * 750;
-          currentAmounts[i].innerHTML = '$' + updatedAmount;
-        }
-
-        var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
-        for (var j = 0; j < breakdownAmounts.length; j++) {
-          var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
-          var updatedBreakdownAmount = breakdownAmount * 750;
-          breakdownAmounts[j].innerHTML = '$' + updatedBreakdownAmount;
-        }
-      }
-    });
+if (!functionHasRun) {
+  // Retrieve the selected currency from local storage, if available
+  var selectedCurrency = localStorage.getItem('selectedCurrency');
+  if (selectedCurrency) {
+    // Set the selected currency in the dropdown
+    document.getElementById('currency-select').value = selectedCurrency;
   }
-}
 
-// Call the updateAmounts function when the currency select option changes
-document.getElementById('currency-select').addEventListener('change', updateAmounts);
+  function updateAmounts() {
+    // Get the selected currency
+    var selectedCurrency = document.getElementById('currency-select').value;
+
+    // Store the selected currency in local storage
+    localStorage.setItem('selectedCurrency', selectedCurrency);
+
+    // Check if the selected currency is NAIRA
+    if (selectedCurrency === 'NAIRA') {
+      // Get the user's current position
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        // Check if the user's location falls within Nigeria's boundaries
+        if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
+          // Calculate the updated amounts by multiplying with 750
+          var currentAmounts = document.getElementsByClassName('current-amount');
+          for (var i = 0; i < currentAmounts.length; i++) {
+            var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
+            var updatedAmount = amount * 750;
+            currentAmounts[i].innerHTML = '₦' + updatedAmount;
+          }
+
+          var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
+          for (var j = 0; j < breakdownAmounts.length; j++) {
+            var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
+            var updatedBreakdownAmount = breakdownAmount * 750;
+            breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
+          }
+        }
+      });
+    }
+  }
+
+  // Call the updateAmounts function when the currency select option changes
+  document.getElementById('currency-select').addEventListener('change', updateAmounts);
+
+  // Set the flag to indicate that the function has run
+  localStorage.setItem('functionHasRun', true);
+} else {
+  // If the function has already run, reset to default values (USD)
+  document.getElementById('currency-select').value = 'USD';
+}
 
     </script>
 </body>
