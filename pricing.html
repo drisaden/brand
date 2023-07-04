@@ -827,7 +827,17 @@ function convertAmountsToNaira() {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
     var updatedAmount = amount * 750;
     currentAmounts[i].innerHTML = '₦' + updatedAmount;
+    const dataTarget = currentAmounts[i].getAttribute('data-target');
     
+    // Get the corresponding total-amount element using the data-target
+    const totalAmountElement = document.getElementById(dataTarget);
+    
+    // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
+    if (totalAmountElement) {
+      totalAmountElement.innerHTML = '₦' + updatedAmount;
+    } else {
+      console.error(`No element found with ID: ${dataTarget}`);
+    }
   }
 
   var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
@@ -844,6 +854,17 @@ function convertAmountsToUSD() {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('₦', ''));
     var updatedAmount = amount / 750;
     currentAmounts[i].innerHTML = '$' + updatedAmount;
+    const dataTarget = currentAmounts[i].getAttribute('data-target');
+    
+      // Get the corresponding total-amount element using the data-target
+      const totalAmountElement = document.getElementById(dataTarget);
+    
+      // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
+      if (totalAmountElement) {
+        totalAmountElement.innerHTML = '$' + updatedAmount;
+      } else {
+        console.error(`No element found with ID: ${dataTarget}`);
+      }
   }
 
   var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
