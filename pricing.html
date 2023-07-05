@@ -676,6 +676,8 @@
 
 
     <script>
+      
+        
         // Get all the accordion headings
         const accordionHeadings = document.querySelectorAll('[data-accordion-target]');
 
@@ -688,6 +690,8 @@
         function toggleAccordion() {
             const target = this.getAttribute('data-accordion-target');
             const accordionBody = document.querySelector(target);
+            const accordionButton = document.querySelector(`[data-accordion-target="${target}"]`);
+
 
             // Check if the accordion body is currently visible
             const isExpanded = accordionBody.classList.contains('hidden');
@@ -699,6 +703,7 @@
                 // Open the clicked accordion body
                 accordionBody.classList.remove('hidden');
                 this.setAttribute('aria-expanded', 'true');
+                accordionButton.textContent = 'Hide breakdown';
             } else {
                 // Close the clicked accordion body
                 accordionBody.classList.add('hidden');
