@@ -152,7 +152,7 @@
                 <!-- content 1 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">Landing page 1</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1"  data-target="one">Landing page 1</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">A seamless, fast-loading single
                             page with a sleek and modern layout creatively designed to promote your products and capture
                             your audience's attention in a matter of seconds.
@@ -226,7 +226,7 @@
                 <!-- content 2 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">Landing page 2</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1"  data-target="two">Landing page 2</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">A custom-made website with
                             a manual setup to manage all your business campaigns at once. Offers a centralized
                             hub for managing your marketing campaigns, tracking analytics, email, blog, e.t.c</p>
@@ -304,7 +304,7 @@
                 <!-- content 3 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">Sales Page</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1"  data-target="three">Sales Page</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">An effective sales-focused webpage designed to showcase and sell your products or services. This is for you if you're a digital
                             marketer, entrepreneur, or a business looking to drive sales and conversions.</p>
                             <div class="mt-7">
@@ -380,7 +380,7 @@
                 <!-- content 4 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">Portfolio page</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1"  data-target="four">Portfolio page</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">A visually stunning webpage to
                             display your work, projects, or creative portfolio. Perfect for you ifyou're an artist,
                             designer, photographer, or freelancer if you want to showcase your skills and attract
@@ -452,7 +452,7 @@
                 <!-- content 5 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">L.M.S</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1"  data-target="five">L.M.S</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">An interactive online platform
                             designed to manage and deliver educational courses or training materials. Ideal for
                             educators, trainers, and organizations involved in e-learning and online education.</p>
@@ -524,7 +524,7 @@
                 <!-- content 6 -->
                 <div class="relative flex flex-col my-10 md:mx-auto w-full border border-gray-200 p-6 bg-white rounded-lg hover:shadow-lg">
                     <div class="flex flex-col justify-center items-center">
-                        <h4 class="text-green-600 tx-2xl text-2xl mb-1">Business Website</h4>
+                        <h4 class="business-type text-green-600 tx-2xl text-2xl mb-1" >Business Website</h4>
                         <p class="tx-lg text-sm text-gray-600 text-center px-2 mb-1">A comprehensive website built for
                             small businesses, startups, and professionals from various industries to boost their online
                             presence, provide information, services, and contact details.</p>
@@ -733,36 +733,46 @@
  
 
 
-function convertAmountsToNaira() {
+
+   function convertAmountsToNaira() {
   var currentAmounts = document.getElementsByClassName('current-amount');
   var customBtns = [...document.getElementsByClassName('custom-btn')];
+
   for (var i = 0; i < currentAmounts.length; i++) {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
     var updatedAmount = amount * 750;
     var abbreviatedAmount = abbreviateAmount(updatedAmount);
     currentAmounts[i].innerHTML = '₦' + abbreviatedAmount;
-    // const storedAmount = currentAmounts[i].innerHTML;
-    // console.log(storedAmount)
-    
-    const dataTarget = currentAmounts[i].getAttribute('data-target');
-    
-    customBtns.forEach((btn) => {
-      const dataTarget2 = btn.getAttribute('data-target');
+
+    var businessTypes = document.getElementsByClassName('business-type');
+    var businessType;
+
+    for (var j = 0; j < businessTypes.length; j++) {
+      var dataTarget = businessTypes[j].getAttribute('data-target');
+      var dataTarget2 = currentAmounts[i].getAttribute('data-target');
+
       if (dataTarget === dataTarget2) {
-        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20${currentAmounts[i].innerHTML}" target="_blank" class="text-lg font-bold">I agreed to pay ${currentAmounts[i].innerHTML}!</a>`;
+        businessType = businessTypes[j].innerHTML;
+        break;
+      }
+    }
+
+    customBtns.forEach((btn) => {
+      var dataTarget = btn.getAttribute('data-target');
+
+      if (dataTarget === dataTarget2) {
+        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%2C%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20${currentAmounts[i].innerHTML}%20for%20a%20${businessType}." target="_blank" class="text-lg font-bold">I agreed to pay ${currentAmounts[i].innerHTML}!</a>`;
       } else {
-        console.error(`No element found with ID: ${dataTarget2}`);
+        console.error(`No element found with data-target: ${dataTarget}`);
       }
     });
-    
-    // Get the corresponding total-amount element using the data-target
-    const totalAmountElement = document.getElementById(dataTarget);
-    
-    // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
+
+    const totalAmountElement = document.getElementById(dataTarget2);
+
     if (totalAmountElement) {
-      totalAmountElement.innerHTML = '₦' + abbreviateAmount(updatedAmount);;
+      totalAmountElement.innerHTML = '₦' + abbreviateAmount(updatedAmount);
     } else {
-      console.error(`No element found with ID: ${dataTarget}`);
+      console.error(`No element found with ID: ${dataTarget2}`);
     }
   }
 
@@ -775,14 +785,56 @@ function convertAmountsToNaira() {
   }
 }
 
+// function convertAmountsToNaira() {
+//   var currentAmounts = document.getElementsByClassName('current-amount');
+//   var customBtns = [...document.getElementsByClassName('custom-btn')];
+//   for (var i = 0; i < currentAmounts.length; i++) {
+//     var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
+//     var updatedAmount = amount * 750;
+//     var abbreviatedAmount = abbreviateAmount(updatedAmount);
+//     currentAmounts[i].innerHTML = '₦' + abbreviatedAmount;
+//     // const storedAmount = currentAmounts[i].innerHTML;
+//     // console.log(storedAmount)
+    
+//     const dataTarget = currentAmounts[i].getAttribute('data-target');
+    
+//     customBtns.forEach((btn) => {
+//       const dataTarget2 = btn.getAttribute('data-target');
+//       if (dataTarget === dataTarget2) {
+//         btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%2C%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20${currentAmounts[i].innerHTML}" target="_blank" class="text-lg font-bold">I agreed to pay ${currentAmounts[i].innerHTML}!</a>`;
+//       } else {
+//         console.error(`No element found with ID: ${dataTarget2}`);
+//       }
+//     });
+    
+//     // Get the corresponding total-amount element using the data-target
+//     const totalAmountElement = document.getElementById(dataTarget);
+    
+//     // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
+//     if (totalAmountElement) {
+//       totalAmountElement.innerHTML = '₦' + abbreviateAmount(updatedAmount);;
+//     } else {
+//       console.error(`No element found with ID: ${dataTarget}`);
+//     }
+//   }
+
+//   var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
+//   for (var j = 0; j < breakdownAmounts.length; j++) {
+//     var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
+//     var updatedBreakdownAmount = breakdownAmount * 750;
+//     breakdownAmounts[j].innerHTML = '₦' + abbreviateAmount(updatedBreakdownAmount);
+
+//   }
+// }
+
 function convertAmountsToUSD() {
   var currentAmounts = document.getElementsByClassName('current-amount');
   var customBtns = [...document.getElementsByClassName('custom-btn')];
   for (var i = 0; i < currentAmounts.length; i++) {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('₦', ''));
     var updatedAmount = amount / 750;
-var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100);
-
+var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100); // Round off to the nearest whole number
+// console.log(roundedAmount)
 currentAmounts[i].innerHTML = '$' + roundedAmount;
 
     const dataTarget = currentAmounts[i].getAttribute('data-target');
@@ -790,7 +842,7 @@ currentAmounts[i].innerHTML = '$' + roundedAmount;
     customBtns.forEach((btn) => {
       const dataTarget2 = btn.getAttribute('data-target');
       if (dataTarget === dataTarget2) {
-        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20$${roundedAmount}" target="_blank" class="text-lg font-bold">I agreed to pay $${roundedAmount}</a>`;
+        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%2C%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20$${roundedAmount}" target="_blank" class="text-lg font-bold">I agreed to pay $${roundedAmount}</a>`;
       } else {
         console.error(`No element found with ID: ${dataTarget2}`);
       }
