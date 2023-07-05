@@ -718,26 +718,6 @@
         }
 
 
-//         // Get all the accordion headings and bodies
-// const accordionHeadings = document.querySelectorAll('[data-accordion-target]');
-// const accordionBodies = document.querySelectorAll('[id^="accordion-collapse-body"]');
-
-// // Add click event listeners to each accordion heading
-// accordionHeadings.forEach((heading) => {
-//   heading.addEventListener('click', () => {
-//     const target = heading.getAttribute('data-accordion-target');
-//     const body = document.querySelector(target);
-
-//     // Toggle the visibility of the accordion body
-//     body.classList.toggle('hidden');
-
-//     // Toggle the accordion icon
-//     const accordionIcon = heading.querySelector('[data-accordion-icon]');
-//     accordionIcon.classList.toggle('fa-caret-down');
-//     accordionIcon.classList.toggle('fa-caret-up');
-//   });
-// });
-
     </script>
     <script src="./assets/js/scroll.js"></script>
     <script src="./assets/js/main.js"></script>
@@ -750,136 +730,7 @@
             delay: 400,
             once: true
         });
-        
-//         if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(showPosition);
-// } else {
-//   console.log("Geolocation is not supported by this browser.");
-// }
-
-// function showPosition(position) {
-//   var latitude = position.coords.latitude;
-//   var longitude = position.coords.longitude;
-//   console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-// }
-
-
-
-// var functionHasRun = localStorage.getItem('functionHasRun');
-
-// if (!functionHasRun) {
-//   // Retrieve the selected currency from local storage, if available
-//   var selectedCurrency = localStorage.getItem('selectedCurrency');
-//   if (selectedCurrency) {
-//     // Set the selected currency in the dropdown
-//     document.getElementById('currency-select').value = selectedCurrency;
-//   }
-
-//   function updateAmounts() {
-//     // Get the selected currency
-//     var selectedCurrency = document.getElementById('currency-select').value;
-
-//     // Store the selected currency in local storage
-//     localStorage.setItem('selectedCurrency', selectedCurrency);
-
-//     // Check if the selected currency is NAIRA
-//     if (selectedCurrency === 'NAIRA') {
-//       // Get the user's current position
-//       navigator.geolocation.getCurrentPosition(function(position) {
-//         var latitude = position.coords.latitude;
-//         var longitude = position.coords.longitude;
-
-//         // Check if the user's location falls within Nigeria's boundaries
-//         if (latitude >= 4.271 && latitude <= 13.892 && longitude >= 2.676 && longitude <= 14.677) {
-//           // Calculate the updated amounts by multiplying with 750
-//           var currentAmounts = document.getElementsByClassName('current-amount');
-//           for (var i = 0; i < currentAmounts.length; i++) {
-//             var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
-//             var updatedAmount = amount * 750;
-//             currentAmounts[i].innerHTML = '₦' + updatedAmount;
-//           }
-
-//           var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
-//           for (var j = 0; j < breakdownAmounts.length; j++) {
-//             var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
-//             var updatedBreakdownAmount = breakdownAmount * 750;
-//             breakdownAmounts[j].innerHTML = '₦' + updatedBreakdownAmount;
-//           }
-//         }
-//       });
-//     }
-//   }
-
-//   // Call the updateAmounts function when the currency select option changes
-//   document.getElementById('currency-select').addEventListener('change', updateAmounts);
-
-//   // Set the flag to indicate that the function has run
-//   localStorage.setItem('functionHasRun', true);
-// } else {
-//   // If the function has already run, reset to default values (USD)
-//   document.getElementById('currency-select').value = 'USD';
-// }
-
-
-
-// function convertAmountsToNaira() {
-//   var currentAmounts = document.getElementsByClassName('current-amount');
-//   for (var i = 0; i < currentAmounts.length; i++) {
-//     var amount = parseFloat(currentAmounts[i].innerHTML.replace('$', ''));
-//     var updatedAmount = amount * 750;
-//     var abbreviatedAmount = abbreviateAmount(updatedAmount);
-//     currentAmounts[i].innerHTML = '₦' + abbreviatedAmount;
-//     const dataTarget = currentAmounts[i].getAttribute('data-target');
-    
-//     // Get the corresponding total-amount element using the data-target
-//     const totalAmountElement = document.getElementById(dataTarget);
-    
-//     // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
-//     if (totalAmountElement) {
-//       totalAmountElement.innerHTML = '₦' + abbreviateAmount(updatedAmount);;
-//     } else {
-//       console.error(`No element found with ID: ${dataTarget}`);
-//     }
-//   }
-
-//   var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
-//   for (var j = 0; j < breakdownAmounts.length; j++) {
-//     var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('$', ''));
-//     var updatedBreakdownAmount = breakdownAmount * 750;
-//     breakdownAmounts[j].innerHTML = '₦' + abbreviateAmount(updatedBreakdownAmount);
-
-//   }
-// }
-
-// function convertAmountsToUSD() {
-//   var currentAmounts = document.getElementsByClassName('current-amount');
-//   for (var i = 0; i < currentAmounts.length; i++) {
-//     var amount = parseFloat(currentAmounts[i].innerHTML.replace('₦', ''));
-//     var updatedAmount = amount / 750;
-// var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100); // Round off to the nearest whole number
-// console.log(roundedAmount)
-// currentAmounts[i].innerHTML = '$' + roundedAmount;
-
-//     const dataTarget = currentAmounts[i].getAttribute('data-target');
-    
-//       // Get the corresponding total-amount element using the data-target
-//       const totalAmountElement = document.getElementById(dataTarget);
-    
-//       // Set the inner HTML of the total-amount element with the inner HTML of the current-amount element
-//       if (totalAmountElement) {
-//         totalAmountElement.innerHTML = '$' + Math.round(((updatedAmount*1000)*100)/100);
-//       } else {
-//         console.error(`No element found with ID: ${dataTarget}`);
-//       }
-//   }
-
-//   var breakdownAmounts = document.getElementsByClassName('breakdown-amount');
-//   for (var j = 0; j < breakdownAmounts.length; j++) {
-//     var breakdownAmount = parseFloat(breakdownAmounts[j].innerHTML.replace('₦', ''));
-//     var updatedBreakdownAmount = breakdownAmount / 750;
-//     breakdownAmounts[j].innerHTML = '$' + Math.round(((updatedBreakdownAmount*1000)*100)/100);
-//   }
-// }
+ 
 
 
 function convertAmountsToNaira() {
@@ -898,7 +749,7 @@ function convertAmountsToNaira() {
     customBtns.forEach((btn) => {
       const dataTarget2 = btn.getAttribute('data-target');
       if (dataTarget === dataTarget2) {
-        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%2C%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20${currentAmounts[i].innerHTML}" target="_blank" class="custom-btn">I agreed to pay ${currentAmounts[i].innerHTML}!</a>`;
+        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20${currentAmounts[i].innerHTML}" target="_blank" class="text-lg font-bold">I agreed to pay ${currentAmounts[i].innerHTML}!</a>`;
       } else {
         console.error(`No element found with ID: ${dataTarget2}`);
       }
@@ -930,8 +781,8 @@ function convertAmountsToUSD() {
   for (var i = 0; i < currentAmounts.length; i++) {
     var amount = parseFloat(currentAmounts[i].innerHTML.replace('₦', ''));
     var updatedAmount = amount / 750;
-var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100); // Round off to the nearest whole number
-// console.log(roundedAmount)
+var roundedAmount = Math.round(((updatedAmount * 1000)*100) / 100);
+
 currentAmounts[i].innerHTML = '$' + roundedAmount;
 
     const dataTarget = currentAmounts[i].getAttribute('data-target');
@@ -939,7 +790,7 @@ currentAmounts[i].innerHTML = '$' + roundedAmount;
     customBtns.forEach((btn) => {
       const dataTarget2 = btn.getAttribute('data-target');
       if (dataTarget === dataTarget2) {
-        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%2C%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20$${roundedAmount}" target="_blank" class="custom-btn">I agreed to pay $${roundedAmount}</a>`;
+        btn.innerHTML = `<a href="https://wa.me/2349036371010?text=Hi%20Drisaden.%20I%20want%20your%20Web%20design%20services%20for%20my%20business.%20I've%20agreed%20to%20pay%20$${roundedAmount}" target="_blank" class="text-lg font-bold">I agreed to pay $${roundedAmount}</a>`;
       } else {
         console.error(`No element found with ID: ${dataTarget2}`);
       }
