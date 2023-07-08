@@ -27,6 +27,12 @@ background-color: #113247;
 background: linear-gradient(to right, #6FABD0, #9fcbe4);
 }
 
+.bg-diamond-2:hover {
+background: transparent;
+border: 1px solid #6FABD0;
+color: #6FABD0;
+}
+
 .bg-diamond-3 {
 background: #9fcbe4;
 }
