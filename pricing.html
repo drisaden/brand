@@ -1082,22 +1082,22 @@
                     <div class="flex justify-center space-x-4">
                         <div class="flex justify-center space-x-4">
                             <!-- Compose Mail -->
-                            <a href="#" onclick="composeMail(event, 'Hello, this is my default message.')" class="text-blue-500 hover:text-blue-700">
-                              <i class="fas fa-envelope mr-1"></i>
-                              Compose Mail
-                            </a>
-                      
-                            <!-- WhatsApp -->
-                            <a href="#" onclick="openWhatsApp(event, 'Hello, I want to connect with you!')" class="text-green-500 hover:text-green-700">
-                              <i class="fab fa-whatsapp mr-1"></i>
-                              WhatsApp
-                            </a>
-                      
-                            <!-- Telegram -->
-                            <a href="#" onclick="openTelegram(event)" class="text-blue-400 hover:text-blue-600">
-                              <i class="fab fa-telegram-plane mr-1"></i>
-                              Telegram
-                            </a>
+      <a href="#" onclick="composeMail(event, 'drisaden@gmail.com', 'Hi, Drisaden. I want to secure a deal with you for [your priority here] purposes. Kindly get back to ASAP. Thanks')" class="text-blue-500 hover:text-blue-700">
+        <i class="fas fa-envelope mr-1"></i>
+        Compose Mail
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="#" onclick="openWhatsApp(event, 'Hi, Drisaden. I want to secure a deal with you for [your priority here] purposes. Kindly get back to ASAP. Thanks')" class="text-green-500 hover:text-green-700">
+        <i class="fab fa-whatsapp mr-1"></i>
+        WhatsApp
+      </a>
+
+      <!-- Telegram -->
+      <a href="#" onclick="openTelegram(event, 'https://t.me/dris_Jewel', 'Hello from Telegram!')"  class="text-blue-400 hover:text-blue-600">
+        <i class="fab fa-telegram-plane mr-1"></i>
+        Telegram
+      </a>
                     </div>
                   </div>
             </div>
@@ -1196,12 +1196,13 @@
 
 
     <script>
-    // Compose Mail
-    function composeMail(event, message) {
+    
+     // Compose Mail
+     function composeMail(event, email, message) {
       event.preventDefault();
-      const subject = encodeURIComponent('I want to your service, Drisaden');
+      const subject = encodeURIComponent('I went through your page. I\'d like to strike a deal with you.');
       const body = encodeURIComponent(message);
-      const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
       window.location.href = mailtoLink;
     }
 
@@ -1214,13 +1215,14 @@
     }
 
     // Open Telegram
-    function openTelegram(event) {
+    function openTelegram(event, telegramLink, message) {
       event.preventDefault();
-      const telegramLink = 'https://t.me/dris_Jewel';
-      window.location.href = telegramLink;
+      const encodedMessage = encodeURIComponent(message);
+      const fullTelegramLink = `${telegramLink}?text=${encodedMessage}`;
+      window.location.href = fullTelegramLink;
     }
-
-        // Get all the accordion headings
+       
+    // Get all the accordion headings
         const accordionHeadings = document.querySelectorAll('[data-accordion-target]');
 
         // Add event listener to each accordion heading
