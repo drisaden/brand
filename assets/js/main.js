@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
                 scrolling = false;
             }, 500);
         }
-    });
+  });
 });
 
 function myFunction(x) {

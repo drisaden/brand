@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .tab {
+      display: none;
+    }
+    .active-tab {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showTab('tab1')">Tab 1</button>
+  <button onclick="showTab('tab2')">Tab 2</button>
+  <button onclick="showTab('tab3')">Tab 3</button>
+  <button onclick="showTab('tab4')">Tab 4</button>
+
+  <div id="tab1" class="tab active-tab">
+    Content 1
+  </div>
+  <div id="tab2" class="tab">
+    Content 2
+  </div>
+  <div id="tab3" class="tab">
+    Content 3
+  </div>
+  <div id="tab4" class="tab">
+    Content 4
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      var tabs = document.getElementsByClassName("tab");
+
+      // Hide all tabs
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove("active-tab");
+      }
+
+      // Show the selected tab
+      var selectedTab = document.getElementById(tabId);
+      selectedTab.classList.add("active-tab");
+    }
+  </script>
+</body>
+</html>
