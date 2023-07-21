@@ -330,10 +330,10 @@
 
 
 window.onload = function () {
-fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key=AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY')
+fetch('https://www.googleapis.com/blogger/v3/blogs/1953737097095782065/posts?key=AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        // console.log(data);
         const webDesignItems = data.items.filter(item => item.labels.includes('Web-design'));
         const graphicDesignItems = data.items.filter(item => item.labels.includes('Graphic-design'));
 
@@ -342,17 +342,16 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
 
         webDesignItems.forEach(item => {
             const src = item.content.match(/<img[^>]*src="([^"]*)"/)?.[1];
-            const href = (item.content.match(/<a\s+[^>]*href="([^"]*)"/) || [])[1];
-            const tool = (item.content.match(/Created with\s+(\w+)/) || [])[1];
-            // console.log(src);
+            const href = item.content.match(/<a[^>]*href="([^"]*)"/)?.[1];
 
-            populateWebElement.innerHTML +=  `<div class="w-full md:w-1/2 p-4 bg-white">
+            populateWebElement.innerHTML +=  
+            `<div class="w-full md:w-1/2 p-4 bg-white">
             <div class="relative">
             <span class="absolute left-0 bottom-0 bg-black text-white py-1 px-3 tx-sm" id="labels">${item.labels}</span>
             <img src="${src}" alt="Image 1"  class="w-full h-64 object-cover mb-4">
             </div>
             <a href="${href}" target="_blank"><h2 class="text-xl font-bold mb-2" id="title">${item.title}</h2></a>
-            <p class="flex items-center justify-between mb-4"><span class="text-sm"><small class="font-bold mr-2 italic">Created with <span>${tool}</span></small></span>
+            <p class="flex items-center justify-left mb-4"
                 <span class="flex items-center">
                             <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor"
                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -383,7 +382,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                         </span>
                    </p>
             <!--<p class="text-gray-700 mb-4" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>-->
-            <p class="text-gray-700 mb-4">${item.content.match(/<p>(.*?)<\/p>/)?.[1].replace(/<\/?[^>]+(>|$)/g, "").trim()}</p>
+            <p class="text-gray-700 mb-4">${item.content.match(/<p[^>]*>(.*?)<\/p>/)?.[1]}</p>
             
             <a href="${href}" target="_blank"><button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="url">View</button></a>
         </div>`
@@ -396,7 +395,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
             <img src="${src}" alt="Image 1"  class="w-full h-64 object-cover mb-4">
             </div>
             <a href="${href}" target="_blank"><h2 class="text-xl font-bold mb-2" id="title">${item.title}</h2></a>
-            <p class="flex items-center justify-between mb-4"><span class="text-sm"><small class="font-bold mr-2 italic">Created with <span>${tool}</span></small></span>
+            <p class="flex items-center justify-left mb-4"
                 <span class="flex items-center">
                             <svg class="w-4 h-4 text-yellow-500 mr-1" fill="currentColor"
                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +426,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
                         </span>
                    </p>
             <!--<p class="text-gray-700 mb-4" id="">${item.content.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ')}</p>-->
-            <p class="text-gray-700 mb-4">${item.content.match(/<p>(.*?)<\/p>/)?.[1].replace(/<\/?[^>]+(>|$)/g, "").trim()}</p>
+            <p class="text-gray-700 mb-4">${item.content.match(/<p[^>]*>(.*?)<\/p>/)?.[1]}</p>
             
             <a href="${href}" target="_blank"><button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" id="url">View</button></a>
         </div>`
