@@ -1,6 +1,3 @@
-// const apiKey = 'AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY';
-// const blogId = '4195482384384708356';
-
 window.onload = function () {
 fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key=AIzaSyAH6Wex5qpSlUeNOds4OvtCSuoUK8c66kY')
     .then(response => response.json())
