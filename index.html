@@ -1437,7 +1437,7 @@ fetch('https://www.googleapis.com/blogger/v3/blogs/4195482384384708356/posts?key
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        const recentItems = data.items.filter(item => item.labels.includes('Recent'));
+        const recentItems = data.items.filter(item => item.labels.includes('Recent')).slice(0, 3);
 
         const populateRecentElement = document.getElementById('populate-Recent');
 
