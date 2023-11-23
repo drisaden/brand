@@ -205,6 +205,17 @@ img.slide-in.visible {
   transform: translateX(0);
 }
 
+.stick-head {
+  transition: background-color 0.3s ease; /* Smooth transition for all changes */
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .link-btn::before {
 content: '';
 position: absolute;
