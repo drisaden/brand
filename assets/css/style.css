@@ -192,6 +192,19 @@ transition: transform 0.3s ease-in-out;
 transform: scale(1.2);
 }
 
+img.slide-in {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s;
+}
+
+img.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .link-btn::before {
 content: '';
 position: absolute;
